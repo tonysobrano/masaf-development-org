@@ -7,13 +7,15 @@ export function Eyebrow({
 }: {
   children: React.ReactNode;
   className?: string;
-  tone?: "tan" | "cream" | "red";
+  tone?: "tan" | "cream" | "red" | "ink";
 }) {
   const toneClass =
     tone === "cream"
       ? "text-masaf-cream/70"
       : tone === "red"
       ? "text-masaf-red"
+      : tone === "ink"
+      ? "text-masaf-ink"
       : "text-masaf-tan";
   return (
     <span
