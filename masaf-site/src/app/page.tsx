@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FeaturedPreview } from "@/components/ui/FeaturedPreview";
+import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
 import { home } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -177,15 +178,10 @@ function MasafSpacesCallout() {
     <section className="py-20 md:py-28">
       <Container size="wide">
         <div className="grid gap-10 md:grid-cols-12 md:items-stretch overflow-hidden rounded-3xl bg-masaf-tan text-masaf-cream">
-          <div className="relative md:col-span-5 min-h-72 md:min-h-[28rem]">
-            <Image
-              src="/images/community/community-1.jpg"
-              alt="Young people collaborating at MASAF Spaces in Jigjiga"
-              fill
-              className="object-cover"
-              sizes="(min-width: 768px) 40vw, 100vw"
-            />
-          </div>
+          <YouTubePlayer
+            videoId="hwl3WM6fOI0"
+            className="md:col-span-5 min-h-72 md:min-h-[28rem]"
+          />
           <div className="md:col-span-7 p-8 md:p-14 flex flex-col justify-center">
             <Eyebrow tone="cream">{home.masafSpacesCallout.eyebrow}</Eyebrow>
             <h2 className="mt-4 text-4xl md:text-5xl font-medium tracking-[-0.025em] leading-[1.1]">
