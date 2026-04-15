@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/**
+ * Masaf Development Organization — Brand Design Tokens
+ * Source: masaf-brand-assets/colors/colors.md and typography/typography.md
+ */
+@theme {
+  /* Brand palette — #931D1D, #FEFEFE, #A87F5F, #161010 */
+  --color-masaf-red: #931d1d;
+  --color-masaf-red-dark: #7a1818;
+  --color-masaf-tan: #a87f5f;
+  --color-masaf-cream: #fefefe;
+  --color-masaf-ink: #161010;
+  --color-masaf-ink-muted: #3d3030;
+
+  /* Semantic aliases so bg-background / text-foreground work as expected */
+  --color-background: var(--color-masaf-cream);
+  --color-foreground: var(--color-masaf-ink);
+
+  /* Design system aliases (per strict design spec) */
+  --color-primary: var(--color-masaf-red);
+  --color-bg-main: var(--color-masaf-cream);
+  --color-accent: var(--color-masaf-tan);
+  --color-text-dark: var(--color-masaf-ink);
+
+  /* Typography */
+  --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale, mobile-first; tailwind utilities like text-display-xl map here */
+  --text-display-xl: 3.375rem; /* 54px mobile */
+  --text-display-xl--line-height: 1.05;
+  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-xl--font-weight: 500;
+
+  --text-display-lg: 2.5rem; /* 40px mobile */
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.025em;
+  --text-display-lg--font-weight: 500;
+
+  --text-display-md: 1.75rem;
+  --text-display-md--line-height: 1.15;
+  --text-display-md--letter-spacing: -0.02em;
+  --text-display-md--font-weight: 500;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-body--letter-spacing: -0.01em;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.08em;
+  --text-eyebrow--font-weight: 500;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-masaf-cream);
+  color: var(--color-masaf-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+/* Scale up display sizes on wider viewports */
+@media (min-width: 768px) {
+  :root {
+    --text-display-xl: 4.9375rem; /* 79px tablet */
+    --text-display-lg: 2.8125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-display-xl: 5.875rem; /* 94px desktop per typography.md */
+    --text-display-lg: 3.4375rem;
+  }
+}
+
+/* Selection tuned to the brand */
+::selection {
+  background: var(--color-masaf-red);
+  color: var(--color-masaf-cream);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-masaf-red);
+  outline-offset: 3px;
+}
