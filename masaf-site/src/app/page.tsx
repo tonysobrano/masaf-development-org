@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FeaturedPreview } from "@/components/ui/FeaturedPreview";
 import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
+import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { home } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function HomePage() {
       <MasafSpacesCallout />
       <ProgrammaticFocus />
       <PartnerSection />
+      <PartnerLogosSection />
       <ClosingBanner />
     </>
   );

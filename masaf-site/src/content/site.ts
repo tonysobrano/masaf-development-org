@@ -540,6 +540,46 @@ export const getInvolved = {
   ],
 };
 
+export const partnersSection = {
+  eyebrow: "Our Partners",
+  heading: "Building together across the Horn of Africa",
+  body: "We are grateful to the organizations and donors who make our work possible.",
+  logos: [
+    // Add partner logo files to public/images/partners/ and update these entries.
+    // Each entry: { name, logo (path in /public), url }
+    {
+      name: "Partner Organization 1",
+      logo: "/images/partners/partner-1.png",
+      url: "#",
+    },
+    {
+      name: "Partner Organization 2",
+      logo: "/images/partners/partner-2.png",
+      url: "#",
+    },
+    {
+      name: "Partner Organization 3",
+      logo: "/images/partners/partner-3.png",
+      url: "#",
+    },
+    {
+      name: "Partner Organization 4",
+      logo: "/images/partners/partner-4.png",
+      url: "#",
+    },
+    {
+      name: "Partner Organization 5",
+      logo: "/images/partners/partner-5.png",
+      url: "#",
+    },
+    {
+      name: "Partner Organization 6",
+      logo: "/images/partners/partner-6.png",
+      url: "#",
+    },
+  ],
+} as const;
+
 export const contactPage = {
   hero: {
     eyebrow: "Contact",

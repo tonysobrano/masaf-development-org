@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/sections/PageHero";
 import { InquiryForm } from "@/components/ui/InquiryForm";
+import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { siteSettings, getInvolved } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -52,6 +53,8 @@ export default function GetInvolvedPage() {
           </Container>
         </section>
       ))}
+
+      <PartnerLogosSection />
 
       <section id="contact-form" className="py-20 md:py-28 bg-masaf-tan/15">
         <Container size="wide">
