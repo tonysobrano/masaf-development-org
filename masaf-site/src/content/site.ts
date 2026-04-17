@@ -48,10 +48,10 @@ export const siteSettings = {
     ],
   },
   socials: {
-    facebook: "https://facebook.com/masaf",
-    linkedin: "https://linkedin.com/company/masaf",
-    instagram: "https://instagram.com/masaf",
-    twitter: "https://x.com/masaf",
+    facebook: "https://www.facebook.com/share/18YBhZ9eWx/?mibextid=wwXIfr",
+    linkedin: "https://www.linkedin.com/company/masaf-space/",
+    instagram: "https://www.instagram.com/masaf_development_org?igsh=MTFpN2F2eWU4MW9zdA==",
+    twitter: "https://x.com/masafdev?s=11",
   },
 } as const;
 
