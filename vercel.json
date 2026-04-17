@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd masaf-site && npm run build",
+  "outputDirectory": "masaf-site/.next",
+  "installCommand": "cd masaf-site && npm install",
+  "framework": "nextjs"
+}

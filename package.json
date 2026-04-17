@@ -1,0 +1,10 @@
+{
+  "name": "masaf-development-org",
+  "private": true,
+  "devDependencies": {
+    "next": "16.2.3"
+  },
+  "scripts": {
+    "build": "cd masaf-site && npm install && npm run build"
+  }
+}
