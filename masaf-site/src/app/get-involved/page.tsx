@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/sections/PageHero";
 import { InquiryForm } from "@/components/ui/InquiryForm";
+import { PartnerLogos } from "@/components/ui/PartnerLogos";
 import { siteSettings, getInvolved } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -53,6 +54,8 @@ export default function GetInvolvedPage() {
         </section>
       ))}
 
+      <PartnerLogos />
+
       <section id="contact-form" className="py-20 md:py-28 bg-masaf-tan/15">
         <Container size="wide">
           <div className="grid gap-14 md:grid-cols-12">
@@ -68,23 +71,11 @@ export default function GetInvolvedPage() {
 
             <aside className="md:col-span-4 md:col-start-9 space-y-10">
               <div>
-                <Eyebrow>Email</Eyebrow>
-                <div className="mt-3 space-y-1 text-sm text-masaf-ink">
-                  <p>
-                    <a href={`mailto:${siteSettings.contact.emails.general}`} className="hover:text-masaf-red transition-colors">
-                      {siteSettings.contact.emails.general}
-                    </a>
-                  </p>
-                  <p>
-                    <a href={`mailto:${siteSettings.contact.emails.inquiries}`} className="hover:text-masaf-red transition-colors">
-                      {siteSettings.contact.emails.inquiries}
-                    </a>
-                  </p>
-                  <p>
-                    <a href={`mailto:${siteSettings.contact.emails.somalia}`} className="hover:text-masaf-red transition-colors">
-                      {siteSettings.contact.emails.somalia}
-                    </a>
-                  </p>
+                <Eyebrow>Contact</Eyebrow>
+                <div className="mt-3 text-sm text-masaf-ink">
+                  <a href={`mailto:${siteSettings.contact.email}`} className="hover:text-masaf-red transition-colors">
+                    {siteSettings.contact.email}
+                  </a>
                 </div>
               </div>
 
@@ -93,15 +84,6 @@ export default function GetInvolvedPage() {
                 <div className="mt-3 space-y-1 text-sm text-masaf-ink">
                   {siteSettings.contact.phones.ethiopia.map((phone) => (
                     <p key={phone}>
-                      Ethiopia:{" "}
-                      <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-masaf-red transition-colors">
-                        {phone}
-                      </a>
-                    </p>
-                  ))}
-                  {siteSettings.contact.phones.somalia.map((phone) => (
-                    <p key={phone}>
-                      Somalia:{" "}
                       <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-masaf-red transition-colors">
                         {phone}
                       </a>
@@ -111,15 +93,20 @@ export default function GetInvolvedPage() {
               </div>
 
               <div>
-                <Eyebrow>Office</Eyebrow>
-                <address className="mt-3 not-italic text-sm text-masaf-ink leading-relaxed">
-                  {siteSettings.contact.address.street}
-                  <br />
-                  {siteSettings.contact.address.city},{" "}
-                  {siteSettings.contact.address.region}
-                  <br />
-                  {siteSettings.contact.address.country}
-                </address>
+                <Eyebrow>Offices</Eyebrow>
+                <div className="mt-3 space-y-4 text-sm text-masaf-ink">
+                  {siteSettings.contact.offices.map((office) => (
+                    <address key={office.name} className="not-italic leading-relaxed">
+                      <span className="font-medium">{office.name}</span>
+                      <br />
+                      {office.street}
+                      <br />
+                      {office.city}{office.region && `, ${office.region}`}
+                      <br />
+                      {office.country}
+                    </address>
+                  ))}
+                </div>
               </div>
 
               <div>

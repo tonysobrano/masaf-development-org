@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
@@ -21,11 +22,22 @@ export default function ProgramsPage() {
 
       <section className="py-20 md:py-28">
         <Container size="wide">
-          <div className="max-w-2xl">
-            <Eyebrow>Focus Areas</Eyebrow>
-            <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
-              {programs.thematicAreas.heading}
-            </h2>
+          <div className="grid gap-12 md:grid-cols-12 md:items-center">
+            <div className="md:col-span-5 relative aspect-[4/5] overflow-hidden rounded-3xl">
+              <Image
+                src="/images/gallery/gallery-3.jpg"
+                alt="MASAF program participants in training"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 40vw, 100vw"
+              />
+            </div>
+            <div className="md:col-span-6 md:col-start-7">
+              <Eyebrow>Focus Areas</Eyebrow>
+              <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
+                {programs.thematicAreas.heading}
+              </h2>
+            </div>
           </div>
           <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {programs.thematicAreas.items.map((item, i) => (
@@ -42,6 +54,40 @@ export default function ProgramsPage() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      <section className="py-20 md:py-28 bg-masaf-tan/15">
+        <Container size="wide">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-11.jpg"
+                alt="Skills training workshop"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-17.jpg"
+                alt="Community gathering"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-5.jpg"
+                alt="Youth engagement"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+          </div>
         </Container>
       </section>
 

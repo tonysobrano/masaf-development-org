@@ -26,8 +26,8 @@ export default function MasafSpacesPage() {
             <div className="md:col-span-6">
               <div className="relative aspect-[5/4] overflow-hidden rounded-3xl">
                 <Image
-                  src="/images/community/community-2.jpg"
-                  alt="The MASAF Spaces hub in Jigjiga"
+                  src="/images/gallery/gallery-8.jpg"
+                  alt="Youth working inside the MASAF Spaces hub in Jigjiga"
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 50vw, 100vw"
@@ -49,6 +49,35 @@ export default function MasafSpacesPage() {
 
       <section className="py-20 md:py-28 bg-masaf-tan/15">
         <Container size="wide">
+          <div className="grid gap-6 md:grid-cols-3 mb-14">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-6.jpg"
+                alt="Community engagement"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-10.jpg"
+                alt="Skills training"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-4.jpg"
+                alt="Youth collaboration"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </div>
+          </div>
           <div className="max-w-2xl">
             <Eyebrow>Why it matters</Eyebrow>
             <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
@@ -136,6 +165,15 @@ export default function MasafSpacesPage() {
       <section className="py-20 md:py-28">
         <Container size="wide">
           <div className="grid gap-12 md:grid-cols-2">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-15.jpg"
+                alt="Youth leadership in action"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            </div>
             <div>
               <Eyebrow>Youth Leadership</Eyebrow>
               <h3 className="mt-4 text-3xl md:text-4xl font-medium leading-[1.15] tracking-[-0.025em] text-masaf-red">
@@ -145,7 +183,14 @@ export default function MasafSpacesPage() {
                 {masafSpaces.youthLeadership.body}
               </p>
             </div>
-            <div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-20 md:py-28 bg-masaf-tan/15">
+        <Container size="wide">
+          <div className="grid gap-12 md:grid-cols-12 md:items-center">
+            <div className="md:col-span-6">
               <Eyebrow>Vision</Eyebrow>
               <h3 className="mt-4 text-3xl md:text-4xl font-medium leading-[1.15] tracking-[-0.025em] text-masaf-red">
                 {masafSpaces.vision.heading}
@@ -153,6 +198,15 @@ export default function MasafSpacesPage() {
               <p className="mt-5 text-lg leading-relaxed text-masaf-ink-muted">
                 {masafSpaces.vision.body}
               </p>
+            </div>
+            <div className="md:col-span-5 md:col-start-8 relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/gallery/gallery-18.jpg"
+                alt="MASAF Spaces vision"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 40vw, 100vw"
+              />
             </div>
           </div>
         </Container>

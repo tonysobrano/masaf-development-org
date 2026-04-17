@@ -42,38 +42,29 @@ export function Footer() {
               Contact
             </p>
             <address className="mt-4 not-italic text-masaf-cream/90 leading-relaxed">
-              {siteSettings.contact.address.street}
+              <span className="font-medium">Jigjiga – MASAF Space Hub</span>
               <br />
-              {siteSettings.contact.address.city},{" "}
-              {siteSettings.contact.address.region}
+              {siteSettings.contact.offices[1].street}
               <br />
-              {siteSettings.contact.address.country}
+              {siteSettings.contact.offices[1].city}, {siteSettings.contact.offices[1].region}
+              <br />
+              {siteSettings.contact.offices[1].country}
             </address>
             <div className="mt-4 space-y-1 text-masaf-cream/90">
               <p>
                 <a
                   className="hover:text-masaf-cream"
-                  href={`mailto:${siteSettings.contact.emails.general}`}
+                  href={`mailto:${siteSettings.contact.email}`}
                 >
-                  {siteSettings.contact.emails.general}
+                  {siteSettings.contact.email}
                 </a>
               </p>
               <p>
-                Ethiopia:{" "}
                 <a
                   className="hover:text-masaf-cream"
                   href={`tel:${siteSettings.contact.phones.ethiopia[0].replace(/\s/g, "")}`}
                 >
                   {siteSettings.contact.phones.ethiopia[0]}
-                </a>
-              </p>
-              <p>
-                Somalia:{" "}
-                <a
-                  className="hover:text-masaf-cream"
-                  href={`tel:${siteSettings.contact.phones.somalia[0].replace(/\s/g, "")}`}
-                >
-                  {siteSettings.contact.phones.somalia[0]}
                 </a>
               </p>
             </div>

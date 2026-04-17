@@ -3,8 +3,9 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { FeaturedPreview } from "@/components/ui/FeaturedPreview";
 import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
+import { PartnerLogos } from "@/components/ui/PartnerLogos";
+import { StatsBadge } from "@/components/ui/StatsBadge";
 import { home } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <FeaturedCardsSection />
       <WhoWeAreSection />
       <MissionSection />
       <WhyMasafSection />
@@ -27,6 +29,7 @@ export default function HomePage() {
       <MasafSpacesCallout />
       <ProgrammaticFocus />
       <PartnerSection />
+      <PartnerLogos />
       <ClosingBanner />
     </>
   );
@@ -73,7 +76,92 @@ function HeroSection() {
           </div>
         </div>
 
-        <FeaturedPreview />
+        <StatsBadge />
+      </Container>
+    </section>
+  );
+}
+
+function FeaturedCardsSection() {
+  const items = [
+    {
+      _id: "card-1",
+      _type: "event" as const,
+      title: "Year-End Event 2024 with Mama Asli Abade",
+      slug: "year-end-event-2024",
+      excerpt: "MASAF hosted Mama Asli Abade, the first female pilot in Africa, for a community evening.",
+      image: "/images/events/event-1.jpg",
+      date: "Dec 31, 2024",
+      category: "Event",
+    },
+    {
+      _id: "card-2",
+      _type: "post" as const,
+      title: "Summer Internship Program 2025",
+      slug: "summer-internship-program-2025",
+      excerpt: "A voluntary 3-month internship across Admin, Programs, and Communications in Jigjiga.",
+      image: "/images/community/community-2.jpg",
+      date: "Jun 1, 2025",
+      category: "News",
+    },
+    {
+      _id: "card-3",
+      _type: "post" as const,
+      title: "Masaf Spaces Launches in Somalia",
+      slug: "masaf-launches-somalia-operations",
+      excerpt: "First regional scale-up outside Ethiopia, deepening ties with Somali communities.",
+      image: "/images/events/event-2.jpg",
+      date: "Mar 15, 2025",
+      category: "News",
+    },
+  ];
+
+  return (
+    <section className="py-12 bg-masaf-cream">
+      <Container size="wide">
+        <ul className="grid gap-6 md:grid-cols-3">
+          {items.map((item) => (
+            <li key={item._id} className="h-full">
+              <a
+                href={item._type === "event" ? `/news#events` : `/news/${item.slug}`}
+                className="group flex flex-col h-full overflow-hidden rounded-2xl bg-masaf-cream/95 backdrop-blur-sm shadow-xl border border-white/20 hover:shadow-2xl transition-shadow"
+              >
+                <div className="relative h-48 flex-shrink-0 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-masaf-ink/60 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className="inline-flex items-center rounded-full bg-masaf-red/90 px-2.5 py-1 text-xs font-medium uppercase tracking-wider text-white">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col flex-1 p-5">
+                  <time className="text-xs text-masaf-ink-muted uppercase tracking-wider">
+                    {item.date}
+                  </time>
+                  <h3 className="mt-1.5 text-lg font-medium leading-snug text-masaf-ink line-clamp-2 group-hover:text-masaf-red transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-masaf-ink-muted line-clamp-2 leading-relaxed flex-1">
+                    {item.excerpt}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-masaf-red">
+                    Read more
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   );
@@ -84,14 +172,21 @@ function WhoWeAreSection() {
     <section className="py-20 md:py-28">
       <Container size="wide">
         <div className="grid gap-12 md:grid-cols-12 md:items-center">
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 relative aspect-[4/5] overflow-hidden rounded-3xl">
+            <Image
+              src="/images/gallery/gallery-25.jpg"
+              alt="MASAF making impact in the community"
+              fill
+              className="object-cover object-left"
+              sizes="(min-width: 768px) 40vw, 100vw"
+            />
+          </div>
+          <div className="md:col-span-6 md:col-start-7">
             <Eyebrow>{home.whoWeAre.eyebrow}</Eyebrow>
             <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
               {home.whoWeAre.heading}
             </h2>
-          </div>
-          <div className="md:col-span-6 md:col-start-7">
-            <p className="text-lg leading-relaxed text-masaf-ink-muted">
+            <p className="mt-6 text-lg leading-relaxed text-masaf-ink-muted">
               {home.whoWeAre.body}
             </p>
           </div>

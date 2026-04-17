@@ -13,13 +13,27 @@ export const metadata: Metadata = {
 };
 
 const galleryImages = [
-  "/images/events/event-1.jpg",
-  "/images/events/event-2.jpg",
-  "/images/events/event-3.jpg",
-  "/images/community/community-1.jpg",
-  "/images/community/community-2.jpg",
-  "/images/community/community-3.jpg",
-  "/images/community/community-4.jpg",
+  "/images/gallery/gallery-1.jpg",
+  "/images/gallery/gallery-2.jpg",
+  "/images/gallery/gallery-3.jpg",
+  "/images/gallery/gallery-4.jpg",
+  "/images/gallery/gallery-5.jpg",
+  "/images/gallery/gallery-6.jpg",
+  "/images/gallery/gallery-7.jpg",
+  "/images/gallery/gallery-8.jpg",
+  "/images/gallery/gallery-9.jpg",
+  "/images/gallery/gallery-10.jpg",
+  "/images/gallery/gallery-11.jpg",
+  "/images/gallery/gallery-12.jpg",
+  "/images/gallery/gallery-16.jpg",
+  "/images/gallery/gallery-17.jpg",
+  "/images/gallery/gallery-18.jpg",
+  "/images/gallery/gallery-19.jpg",
+  "/images/gallery/gallery-20.jpg",
+  "/images/gallery/gallery-21.jpg",
+  "/images/gallery/gallery-22.jpg",
+  "/images/gallery/gallery-23.jpg",
+  "/images/gallery/gallery-24.jpg",
 ];
 
 function formatDate(iso: string): string {

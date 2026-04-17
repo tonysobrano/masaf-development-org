@@ -19,21 +19,33 @@ export const siteSettings = {
   description:
     "A youth-led Ethiopian nonprofit empowering underserved communities through skills development, innovation, and inclusive economic opportunities.",
   contact: {
-    emails: {
-      general: "info@masaf.co",
-      inquiries: "contact@masaf.co",
-      somalia: "somaliaoffice@masaf.co",
-    },
+    email: "contact@masaf.co",
     phones: {
       ethiopia: ["+251 916 195 311", "+251 9 414 17543"],
-      somalia: ["+252 617 203 842"],
     },
-    address: {
-      street: "Ayerdega Street",
-      city: "Jigjiga",
-      region: "Somali Region",
-      country: "Ethiopia",
-    },
+    offices: [
+      {
+        name: "Addis Ababa Office",
+        street: "Hatal Building, Wollo Sefer, Kirkos Sub-city, 3rd Floor",
+        city: "Addis Ababa",
+        region: "",
+        country: "Ethiopia",
+      },
+      {
+        name: "Jigjiga – MASAF Space Hub & Office",
+        street: "Aayardega Street",
+        city: "Jigjiga",
+        region: "Somali Regional State",
+        country: "Ethiopia",
+      },
+      {
+        name: "Degahbour – MASAF Space Hub & Office",
+        street: "Aware Street, Kebele 04",
+        city: "Degahbour",
+        region: "Somali Regional State",
+        country: "Ethiopia",
+      },
+    ],
   },
   socials: {
     facebook: "https://facebook.com/masaf",
