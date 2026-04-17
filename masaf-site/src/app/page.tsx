@@ -6,6 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
 import { PartnerLogos } from "@/components/ui/PartnerLogos";
 import { StatsBadge } from "@/components/ui/StatsBadge";
+import { TypewriterText } from "@/components/ui/TypewriterText";
 import { home } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ function HeroSection() {
         <div className="max-w-4xl">
           <Eyebrow tone="cream">Masaf Development Organization</Eyebrow>
           <h1 className="mt-6 font-medium leading-[1.05] tracking-[-0.03em] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-            {home.hero.tagline}
+            <TypewriterText text={home.hero.tagline} />
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-masaf-cream/85 leading-relaxed">
             {home.hero.subTaglines[0]}
