@@ -21,6 +21,9 @@ const partners: Partner[] = [
   { name: "Ideas Innovation", src: "/images/partners/ideas.jpg" },
   { name: "AVRO Innovation", src: "/images/partners/avro.jpg" },
   { name: "CLI", src: "/images/partners/cli.jpg" },
+  { name: "Partner 1", src: "/images/partners/partner-1.jpg" },
+  { name: "Partner 2", src: "/images/partners/partner-2.jpg" },
+  { name: "Partner 3", src: "/images/partners/partner-3.jpg" },
 ];
 
 type PartnerLogosProps = {
