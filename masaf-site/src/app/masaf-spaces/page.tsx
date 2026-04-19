@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
+import { TestimonialAvatar } from "@/components/ui/TestimonialAvatar";
 import { masafSpaces } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -208,6 +209,48 @@ export default function MasafSpacesPage() {
                 sizes="(min-width: 768px) 40vw, 100vw"
               />
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <Container size="wide">
+          <div className="max-w-2xl mb-14">
+            <Eyebrow>{masafSpaces.testimonials.eyebrow}</Eyebrow>
+            <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
+              {masafSpaces.testimonials.heading}
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {masafSpaces.testimonials.items.map((t) => (
+              <div
+                key={t.name}
+                className="rounded-2xl border border-masaf-ink/10 bg-white p-8 flex flex-col gap-6"
+              >
+                <svg
+                  className="w-8 h-8 text-masaf-tan flex-shrink-0"
+                  viewBox="0 0 32 32"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M9.333 8C5.283 8 2 11.283 2 15.333v1.334C2 20.717 5.283 24 9.333 24c4.05 0 7.334-3.283 7.334-7.333 0-4.05-3.284-7.334-7.334-7.334zm13.334 0C18.617 8 15.333 11.283 15.333 15.333v1.334C15.333 20.717 18.617 24 22.667 24 26.717 24 30 20.717 30 16.667v-1.334C30 11.283 26.717 8 22.667 8z" />
+                </svg>
+                <p className="text-masaf-ink leading-relaxed flex-1">{t.quote}</p>
+                <div className="flex items-center gap-4 pt-2 border-t border-masaf-ink/10">
+                  <TestimonialAvatar
+                    src={t.image}
+                    name={t.name}
+                    initials={t.initials}
+                  />
+                  <div>
+                    <p className="font-medium text-masaf-ink">{t.name}</p>
+                    <p className="text-sm text-masaf-ink-muted">
+                      {t.role}, {t.organization}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

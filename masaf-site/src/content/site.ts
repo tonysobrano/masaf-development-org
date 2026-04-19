@@ -365,6 +365,48 @@ export const masafSpaces = {
     heading: "Impact & Long-Term Vision",
     body: "We are building toward a network of MASAF Spaces across Africa — a reference model for inclusive, youth-led development. Each new space is a commitment to the idea that opportunity should not depend on where you were born.",
   },
+  testimonials: {
+    eyebrow: "Partner Voices",
+    heading: "What our partners say",
+    items: [
+      {
+        quote:
+          "Working with Masaf Space has been a transformative experience for our youth programs. Their environment is not just a venue, but a true innovation hub where ideas are nurtured and collaborations are born. Through our joint initiatives, we've been able to engage more young people, spark creativity, and deliver impactful programs that respond to real community needs.",
+        name: "Abdirahman Bashir",
+        role: "Program Director",
+        organization: "Curis Youth Development Organization",
+        initials: "AB",
+        image: "/images/testimonials/abdirahman-bashir.jpg",
+      },
+      {
+        quote:
+          "Masaf Space has played a vital role in supporting our health awareness and outreach programs. Their commitment to community impact and their flexible, well-equipped space allowed us to host meaningful sessions and connect with diverse audiences. Partnering with Masaf Space strengthened our mission and expanded our reach in the region.",
+        name: "Muna Ali",
+        role: "Founder",
+        organization: "Mosad Med Health Initiative",
+        initials: "MA",
+        image: "/images/testimonials/muna-ali.jpg",
+      },
+      {
+        quote:
+          "As a digital and software-focused company, collaboration and creativity are essential to our work. Masaf Space provided us with the perfect ecosystem to network, innovate, and even co-create solutions with other startups. Their support for tech-driven initiatives is exactly what the Somali region needs to grow its digital economy.",
+        name: "Abdifatah Ibrahim",
+        role: "Founder",
+        organization: "Garaad Digital",
+        initials: "AI",
+        image: "/images/testimonials/abdifatah-ibrahim.jpg",
+      },
+      {
+        quote:
+          "Masaf Space stands out for its inclusivity and dedication to empowering all members of the community. Through our collaboration, we've been able to host programs that amplify the voices of youth with disabilities and create more awareness. Their platform gave us visibility, support, and a sense of belonging.",
+        name: "Abdifatah Mohamed",
+        role: "Executive Director",
+        organization: "Somali Deaf Association",
+        initials: "AM",
+        image: "/images/testimonials/abdifatah-mohamed.jpg",
+      },
+    ],
+  },
 };
 
 export const programs = {
