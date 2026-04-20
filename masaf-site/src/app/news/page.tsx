@@ -96,7 +96,24 @@ export default function NewsPage() {
         </Container>
       </section>
 
-      <section id="events" className="py-20 md:py-24 bg-masaf-tan/15">
+      <section id="stories" className="py-20 md:py-24 bg-masaf-tan/15">
+        <Container>
+          <Eyebrow>Success Stories</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
+            In the words of our community
+          </h2>
+          <p className="mt-6 text-lg text-masaf-ink-muted leading-relaxed">
+            We&rsquo;re gathering stories from program alumni, mentors, and
+            partners. Check back soon — or{" "}
+            <Link className="text-masaf-red hover:underline" href="/get-involved#contact-form">
+              share yours
+            </Link>
+            .
+          </p>
+        </Container>
+      </section>
+
+      <section id="events" className="py-20 md:py-24">
         <Container size="wide">
           <Eyebrow>Events</Eyebrow>
           <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
@@ -130,20 +147,94 @@ export default function NewsPage() {
         </Container>
       </section>
 
-      <section id="stories" className="py-20 md:py-24">
-        <Container>
-          <Eyebrow>Success Stories</Eyebrow>
+      <section id="opportunities" className="py-20 md:py-24 bg-masaf-tan/15">
+        <Container size="wide">
+          <Eyebrow>Opportunities</Eyebrow>
           <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
-            In the words of our community
+            Jobs, internships, and program calls
           </h2>
-          <p className="mt-6 text-lg text-masaf-ink-muted leading-relaxed">
-            We&rsquo;re gathering stories from program alumni, mentors, and
-            partners. Check back soon — or{" "}
-            <Link className="text-masaf-red hover:underline" href="/get-involved#contact-form">
-              share yours
-            </Link>
-            .
+          <p className="mt-4 max-w-2xl text-lg text-masaf-ink-muted leading-relaxed">
+            Open positions, internships, youth opportunities, and calls for
+            program participants are listed here as they are published.
           </p>
+          {news.opportunities.length > 0 ? (
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {news.opportunities.map((opp) => (
+                <article
+                  key={opp.slug}
+                  className="rounded-2xl border border-masaf-ink/10 bg-white p-8 flex flex-col"
+                >
+                  <span className="inline-flex self-start items-center rounded-full bg-masaf-red/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-masaf-red">
+                    {opp.type}
+                  </span>
+                  <h3 className="mt-3 text-xl font-medium tracking-tight text-masaf-red leading-snug">
+                    {opp.title}
+                  </h3>
+                  {opp.location && (
+                    <p className="mt-2 text-sm text-masaf-ink-muted">
+                      {opp.location}
+                    </p>
+                  )}
+                  {opp.excerpt && (
+                    <p className="mt-4 text-sm leading-relaxed text-masaf-ink-muted flex-1">
+                      {opp.excerpt}
+                    </p>
+                  )}
+                  {opp.deadline && (
+                    <p className="mt-4 text-xs uppercase tracking-[0.12em] text-masaf-ink-muted">
+                      Deadline: {formatDate(opp.deadline)}
+                    </p>
+                  )}
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-10 text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
+              No open opportunities right now. Check back soon.
+            </p>
+          )}
+        </Container>
+      </section>
+
+      <section id="blogs" className="py-20 md:py-24">
+        <Container size="wide">
+          <Eyebrow>Blogs</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
+            Perspectives from the MASAF team
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-masaf-ink-muted leading-relaxed">
+            Reflections, lessons learned, and analysis from our programs, field
+            teams, and partners.
+          </p>
+          {news.blogs.length > 0 ? (
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {news.blogs.map((b) => (
+                <article
+                  key={b.slug}
+                  className="rounded-2xl border border-masaf-ink/10 bg-white p-8 flex flex-col"
+                >
+                  <time className="text-xs uppercase tracking-[0.18em] text-masaf-ink-muted">
+                    {formatDate(b.publishedAt)}
+                  </time>
+                  <h3 className="mt-3 text-xl font-medium tracking-tight text-masaf-red leading-snug">
+                    {b.title}
+                  </h3>
+                  {b.author && (
+                    <p className="mt-2 text-sm text-masaf-ink-muted">
+                      By {b.author}
+                    </p>
+                  )}
+                  <p className="mt-4 text-sm leading-relaxed text-masaf-ink-muted flex-1">
+                    {b.excerpt}
+                  </p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-10 text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
+              New blog posts will appear here soon.
+            </p>
+          )}
         </Container>
       </section>
 

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
 import { PartnerLogos } from "@/components/ui/PartnerLogos";
-import { StatsBadge } from "@/components/ui/StatsBadge";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { home } from "@/content/site";
 
@@ -76,8 +76,6 @@ function HeroSection() {
             </Button>
           </div>
         </div>
-
-        <StatsBadge />
       </Container>
     </section>
   );
@@ -87,45 +85,70 @@ function FeaturedCardsSection() {
   const items = [
     {
       _id: "card-1",
-      _type: "event" as const,
-      title: "Year-End Event 2024 with Mama Asli Abade",
-      slug: "year-end-event-2024",
-      excerpt: "MASAF hosted Mama Asli Abade, the first female pilot in Africa, for a community evening.",
-      image: "/images/events/event-1.jpg",
-      date: "Dec 31, 2024",
-      category: "Event",
-    },
-    {
-      _id: "card-2",
-      _type: "post" as const,
-      title: "Summer Internship Program 2025",
-      slug: "summer-internship-program-2025",
-      excerpt: "A voluntary 3-month internship across Admin, Programs, and Communications in Jigjiga.",
-      image: "/images/community/community-2.jpg",
-      date: "Jun 1, 2025",
-      category: "News",
-    },
-    {
-      _id: "card-3",
-      _type: "post" as const,
-      title: "Masaf Spaces Launches in Somalia",
+      title: "Masaf Spaces Launches Operations in Somalia",
       slug: "masaf-launches-somalia-operations",
-      excerpt: "First regional scale-up outside Ethiopia, deepening ties with Somali communities.",
+      excerpt:
+        "First regional scale-up outside Ethiopia, deepening ties with Somali communities across borders.",
       image: "/images/events/event-2.jpg",
       date: "Mar 15, 2025",
       category: "News",
+      href: "/news/masaf-launches-somalia-operations",
+    },
+    {
+      _id: "card-2",
+      title: "From Trainee to Program Facilitator",
+      slug: "",
+      excerpt:
+        "Stories from program alumni who turned skills cohorts into livelihoods and leadership.",
+      image: "/images/community/community-2.jpg",
+      date: "Coming soon",
+      category: "Success Story",
+      href: "/news#stories",
+    },
+    {
+      _id: "card-3",
+      title: "Inside the Summer Internship Program 2025",
+      slug: "summer-internship-program-2025",
+      excerpt:
+        "A voluntary 3-month placement across Admin, Programs, and Communications in Jigjiga.",
+      image: "/images/gallery/gallery-11.jpg",
+      date: "Jun 1, 2025",
+      category: "Blog",
+      href: "/news/summer-internship-program-2025",
+    },
+    {
+      _id: "card-4",
+      title: "Year-End Event 2024 with Mama Asli Abade",
+      slug: "year-end-event-2024",
+      excerpt:
+        "MASAF hosted Mama Asli Abade, the first female pilot in Africa, for a community evening.",
+      image: "/images/events/event-1.jpg",
+      date: "Dec 31, 2024",
+      category: "Update",
+      href: "/news#events",
     },
   ];
 
   return (
-    <section className="py-12 bg-masaf-cream">
+    <section className="py-16 md:py-20 bg-masaf-cream">
       <Container size="wide">
-        <ul className="grid gap-6 md:grid-cols-3">
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <div>
+            <Eyebrow>Latest from MASAF</Eyebrow>
+            <h2 className="mt-3 text-3xl md:text-4xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
+              News, Success Stories, Blogs & Updates
+            </h2>
+          </div>
+          <Button href="/news" variant="ghost" size="sm">
+            Visit News & Media →
+          </Button>
+        </div>
+        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
             <li key={item._id} className="h-full">
               <a
-                href={item._type === "event" ? `/news#events` : `/news/${item.slug}`}
-                className="group flex flex-col h-full overflow-hidden rounded-2xl bg-masaf-cream/95 backdrop-blur-sm shadow-xl border border-white/20 hover:shadow-2xl transition-shadow"
+                href={item.href}
+                className="group flex flex-col h-full overflow-hidden rounded-2xl bg-white shadow-sm border border-masaf-ink/10 hover:shadow-xl hover:border-masaf-red/40 transition-all"
               >
                 <div className="relative h-48 flex-shrink-0 overflow-hidden">
                   <Image
@@ -133,9 +156,9 @@ function FeaturedCardsSection() {
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(min-width: 768px) 33vw, 100vw"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-masaf-ink/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-masaf-ink/50 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3">
                     <span className="inline-flex items-center rounded-full bg-masaf-red/90 px-2.5 py-1 text-xs font-medium uppercase tracking-wider text-white">
                       {item.category}
@@ -248,15 +271,15 @@ function ImpactSection() {
       <Container size="wide">
         <div className="max-w-2xl">
           <Eyebrow>{home.impact.eyebrow}</Eyebrow>
-            <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
-              {home.impact.heading}
-            </h2>
+          <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
+            {home.impact.heading}
+          </h2>
         </div>
-        <dl className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <dl className="mt-14 grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {home.impact.stats.map((stat) => (
             <div key={stat.label}>
               <dt className="text-5xl md:text-6xl font-medium tracking-[-0.03em] text-masaf-red">
-                {stat.value}
+                <AnimatedCounter target={stat.target} suffix={stat.suffix} />
               </dt>
               <dd className="mt-3 text-sm leading-relaxed text-masaf-ink">
                 {stat.label}
@@ -381,11 +404,29 @@ function PartnerSection() {
 
 function ClosingBanner() {
   return (
-    <section className="bg-masaf-red text-masaf-cream py-16">
+    <section className="bg-masaf-red text-masaf-cream py-20 md:py-24">
       <Container>
-        <p className="text-center text-3xl md:text-4xl font-medium tracking-[-0.025em] leading-tight">
-          {home.closing.line}
-        </p>
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow tone="cream">{home.closing.eyebrow}</Eyebrow>
+          <h2 className="mt-5 text-4xl md:text-5xl font-medium tracking-[-0.025em] leading-[1.1]">
+            {home.closing.heading}
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-masaf-cream/85">
+            {home.closing.body}
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Button href={home.closing.primaryCta.href} size="lg">
+              {home.closing.primaryCta.label}
+            </Button>
+            <Button
+              href={home.closing.secondaryCta.href}
+              size="lg"
+              variant="outline-light"
+            >
+              {home.closing.secondaryCta.label}
+            </Button>
+          </div>
+        </div>
       </Container>
     </section>
   );

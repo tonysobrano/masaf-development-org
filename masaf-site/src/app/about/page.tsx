@@ -48,10 +48,24 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24 bg-masaf-tan text-masaf-cream">
         <Container>
-          <div className="text-center">
-            <Eyebrow tone="cream">Mission</Eyebrow>
-            <p className="mt-6 text-2xl md:text-3xl leading-[1.3] tracking-tight font-light">
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow tone="cream">What We Do</Eyebrow>
+            <p className="mt-6 text-lg md:text-xl leading-relaxed text-masaf-cream/90">
+              {about.whatWeDo.body}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 md:py-24 border-y border-masaf-ink/10">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow tone="tan">Mission Statement</Eyebrow>
+            <p className="mt-6 text-2xl md:text-3xl leading-[1.3] tracking-tight text-masaf-ink font-light">
               &ldquo;{about.mission.statement}&rdquo;
+            </p>
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-masaf-ink-muted">
+              {about.mission.extended}
             </p>
           </div>
         </Container>
@@ -178,37 +192,95 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-28 border-t border-masaf-ink/10">
         <Container>
-          <div className="text-center">
-            <Eyebrow>Team</Eyebrow>
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow>Governance</Eyebrow>
             <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
-              {about.team.heading}
+              {about.governance.heading}
             </h2>
-            <p className="mt-6 mx-auto max-w-2xl text-lg leading-relaxed text-masaf-ink-muted">
-              {about.team.body}
+            <p className="mt-6 text-lg leading-relaxed text-masaf-ink-muted">
+              {about.governance.body}
             </p>
           </div>
-          {about.team.members.length > 0 && (
-            <div className="mt-14 flex flex-wrap justify-center gap-8">
-              {about.team.members.map((member) => (
-                <div
-                  key={member.name}
-                  className="flex flex-col items-center gap-3 rounded-2xl border border-masaf-ink/10 bg-white p-8 w-56"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-masaf-tan text-masaf-cream text-lg font-medium">
-                    {member.initials}
-                  </div>
-                  <p className="text-base font-medium text-masaf-red text-center">
-                    {member.name}
-                  </p>
-                  <p className="text-sm text-masaf-ink-muted text-center">
-                    {member.role}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
         </Container>
       </section>
+
+      <TeamSection
+        eyebrow="Executive Team"
+        heading={about.executiveTeam.heading}
+        body={about.executiveTeam.body}
+        members={about.executiveTeam.members}
+      />
+
+      <TeamSection
+        eyebrow="Board of Directors"
+        heading={about.boardOfDirectors.heading}
+        body={about.boardOfDirectors.body}
+        members={about.boardOfDirectors.members}
+        tone="alt"
+      />
     </>
+  );
+}
+
+type TeamMember = {
+  name: string;
+  role: string;
+  initials: string;
+  image?: string;
+  bio?: string;
+};
+
+function TeamSection({
+  eyebrow,
+  heading,
+  body,
+  members,
+  tone,
+}: {
+  eyebrow: string;
+  heading: string;
+  body: string;
+  members: TeamMember[];
+  tone?: "alt";
+}) {
+  const toneClass = tone === "alt" ? "bg-masaf-tan/15" : "";
+  return (
+    <section className={`py-20 md:py-28 border-t border-masaf-ink/10 ${toneClass}`}>
+      <Container>
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
+            {heading}
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-masaf-ink-muted">
+            {body}
+          </p>
+        </div>
+        {members.length > 0 ? (
+          <div className="mt-14 flex flex-wrap justify-center gap-8">
+            {members.map((member) => (
+              <div
+                key={member.name}
+                className="flex flex-col items-center gap-3 rounded-2xl border border-masaf-ink/10 bg-white p-8 w-56"
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-masaf-tan text-masaf-cream text-lg font-medium">
+                  {member.initials}
+                </div>
+                <p className="text-base font-medium text-masaf-red text-center">
+                  {member.name}
+                </p>
+                <p className="text-sm text-masaf-ink-muted text-center">
+                  {member.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="mt-10 text-center text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
+            Details coming soon
+          </p>
+        )}
+      </Container>
+    </section>
   );
 }

@@ -5,7 +5,6 @@ import "./globals.css";
 import { bricolage } from "./fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { AnnouncementBanner } from "@/components/ui/AnnouncementBanner";
 import { siteSettings } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -37,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bricolage.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-masaf-cream text-masaf-ink" suppressHydrationWarning>
-        <AnnouncementBanner />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

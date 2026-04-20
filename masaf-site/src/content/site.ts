@@ -121,33 +121,22 @@ export const home = {
     eyebrow: "Our Impact",
     heading: "Growing reach across the Horn of Africa",
     stats: [
-      {
-        value: "17,000+",
-        label: "Youth engaged through programs, events, and digital platforms",
-      },
-      {
-        value: "Multiple",
-        label: "MASAF Spaces established as inclusive hubs for skills and innovation",
-      },
-      {
-        value: "Hundreds",
-        label: "Trained in employability, entrepreneurship, and digital skills",
-      },
-      {
-        value: "Growing",
-        label: "Partnerships with civil society, government, and private-sector actors",
-      },
+      { target: 17000, suffix: "+", label: "Youth Reached" },
+      { target: 78, suffix: "", label: "Activities Delivered" },
+      { target: 5, suffix: "", label: "Cities Reached" },
+      { target: 28, suffix: "", label: "Partnerships Built" },
+      { target: 2, suffix: "", label: "Hubs Created" },
     ],
   },
   masafSpacesCallout: {
     eyebrow: "A Flagship Program",
-    heading: "MASAF Spaces",
-    body: "Our first youth innovation and co-working hub opened in the Somali Region of Ethiopia. Today MASAF Spaces is a blended physical and digital model — a place where youth access skills training, mentorship, and peer networks designed for the realities of underserved communities.",
+    heading: "MASAF Spaces: Youth Innovation & Skills Hubs",
+    body: "MASAF established the first youth innovation and co-working hub in the Somali Region, creating safe, inclusive spaces where young people can learn, innovate, collaborate, and build careers. Today, MASAF Spaces operate as a blended model—combining physical hubs and digital platforms—to expand access to skills, mentorship, and opportunity.",
     cta: { label: "Explore MASAF Spaces →", href: "/masaf-spaces" },
   },
   programmaticFocus: {
     eyebrow: "Programmatic Focus",
-    heading: "Six integrated areas of work",
+    heading: "Our Work Focuses On",
     areas: [
       "Skills Development & Lifelong Learning",
       "Entrepreneurship & MSME Support",
@@ -171,108 +160,135 @@ export const home = {
     cta: { label: "Partner With Us →", href: "/get-involved" },
   },
   closing: {
-    line: "Creating Pathways to Skills, Jobs, and Resilience.",
+    eyebrow: "Build With Us",
+    heading: "Creating Pathways to Skills, Jobs, and Resilience.",
+    body: "Whether you are a donor, employer, university, institution, or individual contributor — there is a way to strengthen the opportunities young people build here.",
+    primaryCta: { label: "Partner With Us", href: "/get-involved" },
+    secondaryCta: { label: "Explore Our Programs", href: "/programs" },
   },
 } as const;
 
 export const about = {
   hero: {
-    eyebrow: "About MASAF",
+    eyebrow: "About MDO",
     heading: "A youth-driven development organization.",
-    body: "Masaf Development Organization (MASAF) began in April 2024 as Masaf Spaces — the first youth innovation and co-working hub in Ethiopia's Somali Region, headquartered in Jigjiga. As the work grew, we registered federally as a development organization so our skills, entrepreneurship, and resilience programming could scale across Ethiopia and the Horn of Africa.",
+    body: "Masaf Development Organization (MDO) is a youth-driven, impact-focused nonprofit organization working across Ethiopia to empower underserved and marginalized communities.",
   },
   founding: {
     heading: "From a single hub to a nationwide mission",
-    body: "We started because young people in the Somali Region had the ambition, creativity, and resolve to shape their future — but faced systemic barriers to skills, networks, and capital. The first MASAF Space became a proof point: when you combine inclusive space, practical training, and peer community, young people build real livelihoods. Today we carry that model into a full development organization.",
+    body: "MASAF was founded in April 2024 as Masaf Spaces — the first youth innovation and skills hub in the Somali Region, headquartered in Jigjiga. As its impact expanded, MASAF transitioned into a federally registered development organization with a broader mandate and strengthened governance systems.",
+  },
+  whatWeDo: {
+    heading: "What We Do",
+    body: "MASAF expands access to skills, digital opportunities, entrepreneurship support, and inclusive economic pathways for youth and marginalized groups.",
   },
   mission: {
     heading: "Our Mission",
     statement:
-      "To empower youth and marginalized communities in Ethiopia — including women, internally displaced persons (IDPs), and persons with disabilities — by expanding access to skills, education, digital opportunities, and networks that create jobs, strengthen resilience, and drive inclusive development.",
+      "Masaf Development Organization (MASAF) empowers underserved and marginalized communities—particularly youth, women, internally displaced persons (IDPs), and persons with disabilities—by expanding inclusive access to skills, education, digital opportunities, networks, and essential resources.",
+    extended:
+      "We enable individuals to build sustainable livelihoods, create jobs, and strengthen resilience, while developing future innovators, entrepreneurs, and civic leaders who contribute to economic growth, social inclusion, and resilient, thriving communities across Ethiopia and the Horn of Africa.",
   },
   objectives: {
     heading: "Organizational Objectives",
+    intro: "MASAF works toward the following strategic objectives:",
     items: [
       {
-        title: "Expand access to quality skills and lifelong learning",
+        title: "Inclusive Education Access",
         description:
-          "Equip youth with employable and entrepreneurial capabilities aligned with today's economy.",
+          "Enhance access to inclusive, practical, and digital education for marginalized youth and women.",
       },
       {
-        title: "Build inclusive economic opportunity",
+        title: "Economic Empowerment",
         description:
-          "Open pathways for women, IDPs, and persons with disabilities into jobs, enterprise, and leadership.",
+          "Promote economic empowerment through entrepreneurship development, financial literacy, and sustainable livelihood opportunities.",
       },
       {
-        title: "Grow a resilient innovation ecosystem",
+        title: "Gender Equality & Social Inclusion",
         description:
-          "Strengthen hubs, networks, and digital platforms that support young founders and creatives.",
+          "Advance gender equality and social inclusion for women, girls, persons with disabilities, and displaced populations.",
       },
       {
-        title: "Deepen partnerships and co-creation",
+        title: "Labor Market Readiness",
         description:
-          "Work alongside civil society, government, private sector, and donors to multiply impact.",
+          "Improve labor market readiness and workforce participation through employability skills development and private-sector linkages.",
       },
       {
-        title: "Generate and share learning",
+        title: "Community Resilience",
         description:
-          "Produce research, tools, and models other practitioners can adapt for their own contexts.",
+          "Strengthen community resilience and climate-responsive livelihoods through innovative, sustainable, and locally driven solutions.",
       },
     ],
   },
   values: {
-    heading: "Our Core Values",
+    heading: "MASAF Core Values",
+    intro:
+      "MASAF's work is guided by the following core values, which shape our decisions, partnerships, and impact:",
     items: [
       {
         title: "Integrity",
         description:
-          "We operate transparently, honor our commitments, and hold ourselves accountable to the communities we serve.",
+          "We uphold honesty, transparency, and ethical conduct in all our actions, ensuring trust and accountability with communities, partners, and stakeholders.",
       },
       {
         title: "Excellence",
         description:
-          "We aim for the highest quality in programs, spaces, and research — never settling for what's merely adequate.",
+          "We pursue the highest standards in program design, implementation, and impact, continuously learning and improving to deliver meaningful results.",
       },
       {
         title: "Innovation",
         description:
-          "We experiment, iterate, and adopt new tools and ideas to solve persistent problems in new ways.",
+          "We embrace creativity, technology, and new approaches to address complex challenges and unlock opportunities for youth and women.",
       },
       {
         title: "Inclusion & Equity",
         description:
-          "We design for those most often left out. Access is the baseline; belonging is the goal.",
+          "We promote equal access and meaningful participation for all, with a strong focus on marginalized groups, including youth, women, IDPs, and persons with disabilities.",
       },
       {
         title: "Collaboration",
         description:
-          "We build with — not for — partners, communities, and young leaders who understand local realities best.",
+          "We believe sustainable impact is achieved through strong partnerships and collective action with communities, civil society, government, and the private sector.",
       },
       {
         title: "Accountability",
         description:
-          "We measure what matters, share what we learn, and adjust based on evidence.",
+          "We remain responsible and transparent in the use of resources, delivery of results, and fulfillment of our commitments.",
       },
       {
         title: "Empowerment",
         description:
-          "We invest in people so they lead their own futures — and eventually, the futures of others.",
+          "We strengthen people's skills, agency, and confidence so they can lead their own development and shape their futures.",
       },
     ],
   },
   approach: {
     heading: "Our Approach",
     items: [
-      "Co-design programs with the young people they serve",
-      "Combine physical spaces with digital delivery for scale",
-      "Partner with employers and ecosystems for real pathways",
-      "Center women, IDPs, and persons with disabilities by default",
-      "Measure livelihood outcomes, not activity counts",
+      "Participatory and community-led development",
+      "Youth innovation hubs through Masaf Spaces",
+      "Skills, mentorship, and access to technology",
+      "Strengthening local leadership and institutions",
+      "Partnership-driven and scalable impact",
     ],
   },
+  governance: {
+    heading: "Governance Structure",
+    body: "MASAF Development Organization is a board-led organization guided by strong governance principles that promote accountability, transparency, strategic leadership, and sustainable impact.",
+  },
+  executiveTeam: {
+    heading: "Meet Our Executive Team",
+    body: "Our Executive Team leads the organization's strategy, operations, partnerships, and day-to-day implementation, ensuring effective delivery of programs and continued growth.",
+    members: [] as { name: string; role: string; initials: string; image?: string; bio?: string }[],
+  },
+  boardOfDirectors: {
+    heading: "Meet Our Board of Directors",
+    body: "Our Board of Directors provides strategic oversight, governance leadership, and long-term stewardship of the organization. Their guidance helps strengthen accountability, sustainability, and MASAF's mission-driven vision.",
+    members: [] as { name: string; role: string; initials: string; image?: string; bio?: string }[],
+  },
   team: {
-    heading: "The Team",
-    body: "MASAF is led by a diverse team of development professionals, young leaders, and technologists drawn from across the Horn of Africa. We combine field experience in youth programs, livelihoods, and community resilience with fluency in digital product and ecosystem building.",
+    heading: "Our Team",
+    body: "MASAF is led by a diverse team of development professionals with experience in youth empowerment, skills development, entrepreneurship, digital inclusion, and community resilience.",
     members: [
       {
         name: "Ahmed Taman Hasen",
@@ -286,22 +302,28 @@ export const about = {
 export const masafSpaces = {
   hero: {
     eyebrow: "Flagship Program",
-    heading: "MASAF Spaces",
+    heading: "Masaf Spaces: Youth Innovation & Skills Hubs",
     subheading:
-      "The first youth innovation hub in the Somali Region — now a blended model for inclusive skills and opportunity.",
+      "The first youth innovation and skills hub in the Somali Region — now a blended model for inclusive skills and opportunity.",
   },
   overview: {
     heading: "Overview",
-    body: "MASAF Spaces began in Jigjiga as a single physical hub — a welcoming place where young people could learn, build, and find community. It has grown into a repeatable model: a network of inclusive spaces, connected by a shared digital platform, designed to reach young people wherever they are.",
+    body: "Masaf Spaces is the flagship youth innovation and skills program of Masaf Development Organization (MASAF). Established in Jigjiga, Masaf Spaces became the first co-working and youth innovation hub in the Somali Region, responding to the absence of inclusive, safe, and accessible spaces where young people could learn, collaborate, and build sustainable futures.",
+    extended:
+      "What began as a single physical hub has evolved into a scalable model of youth-centered innovation spaces, combining physical community hubs with emerging digital platforms. Masaf Spaces provides young people — especially those from underserved and marginalized backgrounds — with the tools, networks, and confidence to turn ideas into livelihoods, careers, and community-driven solutions.",
   },
   whyItMatters: {
-    heading: "Why MASAF Spaces Matter",
-    problem:
-      "Young people in underserved communities face stacked barriers: limited access to training that matches the real economy, few physical spaces to collaborate, weak mentorship networks, and little visibility of opportunities. Women, IDPs, and persons with disabilities face even steeper barriers.",
-    solution:
-      "MASAF Spaces lower those barriers by offering inclusive places, practical curricula, peer community, and direct connections to employers and enterprises — bundled into one sustained experience.",
+    heading: "Why Masaf Spaces Matter",
+    lead: "In many underserved regions, youth face multiple barriers: limited access to skills training, technology, mentorship, professional networks, and safe civic spaces. Masaf Spaces addresses these gaps by creating inclusive environments where youth are not only beneficiaries, but active contributors and leaders.",
+    bullets: [
+      "Expands access to skills and opportunities",
+      "Encourages youth-led problem solving and innovation",
+      "Strengthens local entrepreneurship and employment pathways",
+      "Supports social cohesion and civic engagement",
+      "Contributes to a stronger youth empowerment ecosystem",
+    ],
     impact:
-      "Youth who engage with MASAF Spaces consistently report gains in confidence, skills, and employment — and become mentors, facilitators, and program leaders themselves.",
+      "Youth who engage with Masaf Spaces gain access to valuable resources, professional networks, and real opportunities that help them build careers, secure employment, start businesses, and create positive impact within their communities. Many go on to become entrepreneurs, leaders, collaborators, and contributors to local development.",
   },
   services: {
     heading: "Services Available to Youth",
@@ -344,26 +366,50 @@ export const masafSpaces = {
     ],
   },
   model: {
-    heading: "Physical & Digital Model",
+    heading: "Physical & Digital Masaf Spaces Model",
     physical: {
-      title: "Physical MASAF Spaces",
+      title: "Physical Masaf Spaces",
       description:
-        "Inclusive hubs offering hands-on training, peer learning, and youth-led initiatives. Open, accessible, and designed to feel like a second home for young people.",
+        "Physical Masaf Spaces serve as community innovation hubs — safe, inclusive environments where youth can meet, learn, collaborate, and create. These hubs bring essential services closer to communities, particularly in regions where such opportunities are limited.",
+      supports: [
+        "Hands-on training and workshops",
+        "Peer-to-peer learning and collaboration",
+        "Youth-led initiatives and community solutions",
+        "Local innovation, entrepreneurship, and leadership",
+      ],
+      note: "They also function as civil spaces that promote inclusion, dialogue, and participation, strengthening trust and cooperation among youth, institutions, and communities.",
     },
     digital: {
-      title: "Digital MASAF Spaces",
+      title: "Digital Masaf Spaces",
       status: "Coming Soon",
       description:
-        "An online platform for training, virtual mentorship, business support, and career guidance — extending MASAF's reach far beyond any single city.",
+        "Digital Masaf Spaces will extend the full Masaf Spaces experience online — ensuring that youth in remote, displaced, or underserved areas can access the same services offered in physical hubs.",
+      provides: [
+        "Online skills training and learning resources",
+        "Virtual mentorship and peer networks",
+        "Entrepreneurship and business support",
+        "Career guidance and employability tools",
+        "Access to opportunities, events, and communities",
+      ],
+      note: "This blended model allows MASAF to scale impact without geographic barriers, reaching more young people across Ethiopia and beyond.",
     },
   },
-  youthLeadership: {
-    heading: "Peer Support & Youth Leadership",
-    body: "Young people don't just attend MASAF Spaces — they run them. Graduates return as facilitators, mentors, and program leads. It's the most reliable indicator we have that the model is working.",
+  peerSupport: {
+    heading: "Peer Support, Youth Leadership & Ecosystem Contribution",
+    lead: "Masaf Spaces is built on the belief that youth are not just participants, but leaders of change. The spaces actively promote peer learning, collaboration, and youth-led solutions that respond to local challenges.",
+    introLine: "Through Masaf Spaces, MASAF:",
+    bullets: [
+      "Strengthens youth networks and collective action",
+      "Supports civil society and community engagement",
+      "Bridges gaps between youth, employers, institutions, and development actors",
+      "Contributes to a more inclusive and resilient youth empowerment ecosystem",
+    ],
   },
   vision: {
-    heading: "Impact & Long-Term Vision",
-    body: "We are building toward a network of MASAF Spaces across Africa — a reference model for inclusive, youth-led development. Each new space is a commitment to the idea that opportunity should not depend on where you were born.",
+    heading: "Impact and Long-Term Vision",
+    body: "Masaf Spaces has already demonstrated the power of youth-centered spaces to unlock potential, create opportunity, and strengthen communities. As part of MASAF's long-term strategy, the organization envisions expanding Masaf Spaces into a network of youth innovation and skills hubs across major cities in Africa, through partnerships, learning, and scalable models.",
+    extended:
+      "Grounded in Ethiopia and informed by local realities, Masaf Spaces aims to become a reference model for inclusive, youth-led development, supporting the next generation of innovators, entrepreneurs, and civic leaders.",
   },
   testimonials: {
     eyebrow: "Partner Voices",
@@ -411,23 +457,176 @@ export const masafSpaces = {
 
 export const programs = {
   hero: {
-    eyebrow: "Programs",
+    eyebrow: "Our Programs",
     heading: "Integrated programs that address the real barriers facing youth.",
-    body: "MASAF programs are designed to work together. A young person might join a skills cohort, graduate into entrepreneurship coaching, and eventually mentor peers through a digital jobs track. The goal is a sustained pathway, not a one-off workshop.",
+    body: "Masaf Development Organization designs and implements integrated programs that address barriers to employment, entrepreneurship, and social inclusion faced by youth and marginalized communities. Our programs combine skills development, digital access, entrepreneurship support, workforce readiness, and community resilience to create sustainable pathways to livelihoods, leadership, and economic participation.",
+    bodyExtended:
+      "MASAF's programs are inclusive, demand-driven, and aligned with labor market needs and development priorities, ensuring measurable impact and long-term value for individuals and communities.",
   },
-  thematicAreas: {
-    heading: "Thematic Focus Areas",
-    items: [
-      "Skills Development & Lifelong Learning",
-      "Entrepreneurship & MSME Support",
-      "Youth Leadership & Civic Engagement",
-      "Women's Economic Empowerment",
-      "Workforce Development & Employability",
-      "Digital Jobs & Innovation",
-      "Financial Literacy & Inclusion",
-      "Climate-Smart Livelihoods",
-      "Community Resilience & IDP Support",
+  overview: {
+    heading: "Programs We Offer",
+    body: "At MASAF Development Organization, we deliver practical, inclusive, and future-focused programs that empower youth, women, entrepreneurs, and vulnerable communities to unlock opportunities, improve livelihoods, and build resilient communities. Our work is delivered through MASAF Spaces — our physical innovation and learning hubs — as well as digital platforms, mobile outreach, and community-based programs that expand access beyond location barriers.",
+  },
+  items: [
+    {
+      number: "01",
+      title: "Skills Development & Lifelong Learning",
+      description:
+        "We provide high-quality learning opportunities that help individuals continuously grow, adapt, and succeed in a changing world. Our programs focus on practical skills, communication, leadership, digital literacy, languages, and personal development.",
+      why: "Many talented people lack access to relevant learning opportunities. We bridge this gap by making skills development accessible and impactful.",
+      objectives: [
+        "Strengthen employability and productivity",
+        "Build confidence and personal growth",
+        "Promote lifelong learning culture",
+        "Prepare individuals for modern opportunities",
+      ],
+    },
+    {
+      number: "02",
+      title: "Entrepreneurship & MSME Support",
+      description:
+        "We support entrepreneurs and small businesses to start, grow, formalize, and scale sustainable enterprises through training, mentorship, incubation, business advisory services, and market linkages.",
+      why: "Small businesses are key drivers of jobs and local economic growth, yet many need stronger support systems.",
+      objectives: [
+        "Promote entrepreneurship and innovation",
+        "Strengthen MSME growth and resilience",
+        "Create jobs and income opportunities",
+        "Improve business management capacity",
+      ],
+    },
+    {
+      number: "03",
+      title: "Youth Leadership & Civic Engagement",
+      description:
+        "We empower young people to become leaders, changemakers, and active contributors to peaceful, inclusive, and prosperous communities.",
+      why: "Youth are a powerful force for development when equipped with leadership skills, voice, and opportunity.",
+      objectives: [
+        "Build youth leadership capacity",
+        "Increase civic participation",
+        "Encourage volunteerism and community action",
+        "Promote peace and inclusion",
+      ],
+    },
+    {
+      number: "04",
+      title: "Women's Economic Empowerment",
+      description:
+        "We create pathways for women to access skills, entrepreneurship support, employability opportunities, and leadership development.",
+      why: "When women thrive economically, families prosper and communities become stronger.",
+      objectives: [
+        "Increase women's economic participation",
+        "Support women-led enterprises",
+        "Improve financial independence",
+        "Advance inclusive growth",
+      ],
+    },
+    {
+      number: "05",
+      title: "Workforce Development & Employability",
+      description:
+        "We prepare individuals for decent work through career readiness, workplace skills, professional development, and connections to opportunities.",
+      why: "Many job seekers face barriers due to skills mismatch and limited labor market access.",
+      objectives: [
+        "Improve job readiness",
+        "Strengthen professional skills",
+        "Increase access to employment opportunities",
+        "Support career growth pathways",
+      ],
+    },
+    {
+      number: "06",
+      title: "Digital Jobs & Innovation",
+      description:
+        "We help communities access the future economy through digital skills training, freelancing readiness, innovation labs, remote work preparation, and technology-enabled opportunities.",
+      why: "Digital transformation is creating opportunities, but many communities risk being left behind.",
+      objectives: [
+        "Expand digital employment pathways",
+        "Build innovation and problem-solving culture",
+        "Prepare youth for remote work opportunities",
+        "Increase access to technology careers",
+      ],
+    },
+    {
+      number: "07",
+      title: "Financial Literacy & Inclusion",
+      description:
+        "We equip individuals and businesses with the knowledge and tools to make informed financial decisions and access inclusive financial systems.",
+      why: "Financial knowledge is essential for stability, growth, and resilience.",
+      objectives: [
+        "Promote savings and budgeting habits",
+        "Improve business financial management",
+        "Strengthen financial confidence",
+        "Support inclusive economic participation",
+      ],
+    },
+    {
+      number: "08",
+      title: "Climate-Smart Livelihoods",
+      description:
+        "We promote sustainable livelihoods that help communities adapt to environmental and economic challenges while creating income opportunities.",
+      why: "Climate change increasingly affects jobs, agriculture, migration, and household resilience.",
+      objectives: [
+        "Build climate resilience",
+        "Promote green livelihoods and enterprise",
+        "Support sustainable income generation",
+        "Encourage environmental responsibility",
+      ],
+    },
+    {
+      number: "09",
+      title: "Community Resilience & IDP Support",
+      description:
+        "We work with displaced and vulnerable communities to rebuild livelihoods, strengthen inclusion, and create pathways toward self-reliance.",
+      why: "Communities affected by displacement and crisis need long-term opportunities, not only short-term relief.",
+      objectives: [
+        "Restore dignity and livelihoods",
+        "Improve social and economic inclusion",
+        "Support youth and women in vulnerable settings",
+        "Strengthen resilience and recovery",
+      ],
+    },
+  ],
+  deliveryModel: {
+    heading: "Our Delivery Model",
+    body: "MASAF combines physical spaces, digital access, and community outreach to ensure wider reach and stronger impact.",
+    channels: [
+      {
+        title: "MASAF Spaces",
+        description:
+          "Innovation hubs for learning, networking, events, incubation, and collaboration.",
+      },
+      {
+        title: "Digital Programs",
+        description:
+          "Online training, mentorship, remote learning, and virtual engagement.",
+      },
+      {
+        title: "Community Outreach",
+        description:
+          "Mobile programs and localized initiatives for underserved communities.",
+      },
     ],
+    note: "This blended model allows us to reach participants where they are and scale opportunities efficiently.",
+  },
+  partner: {
+    heading: "Partner With Us",
+    body: "We welcome collaboration with donors, companies, development agencies, institutions, and ecosystem actors to scale impact together.",
+    intro: "Partners can engage through:",
+    bullets: [
+      "Strategic collaboration and co-designed programs",
+      "Funding and sponsorship support",
+      "Technical expertise and mentorship",
+      "Research, innovation, and ecosystem partnerships",
+      "Talent pipelines, internships, and job linkages",
+      "Expansion of MASAF Spaces and digital initiatives",
+    ],
+    note: "To explore partnership opportunities, please visit the Partner section of our website.",
+    cta: { label: "Partner With Us →", href: "/get-involved" },
+  },
+  join: {
+    heading: "Join Our Programs",
+    body: "Participants can explore open calls, training opportunities, events, and upcoming initiatives through the News & Media section of our website.",
+    cta: { label: "Explore Opportunities →", href: "/news#opportunities" },
   },
 };
 
@@ -438,11 +637,28 @@ export const news = {
   },
   sections: [
     { id: "news", label: "News & Updates" },
-    { id: "events", label: "Events" },
     { id: "stories", label: "Success Stories" },
+    { id: "events", label: "Events" },
+    { id: "opportunities", label: "Opportunities" },
+    { id: "blogs", label: "Blogs" },
     { id: "gallery", label: "Media Gallery" },
     { id: "resources", label: "Resources" },
   ],
+  opportunities: [] as {
+    slug: string;
+    type: "Job" | "Internship" | "Youth Opportunity" | "Program Call";
+    title: string;
+    deadline?: string;
+    location?: string;
+    excerpt?: string;
+  }[],
+  blogs: [] as {
+    slug: string;
+    title: string;
+    author?: string;
+    publishedAt: string;
+    excerpt: string;
+  }[],
   posts: [
     {
       slug: "empowering-innovation-transforming-lives",

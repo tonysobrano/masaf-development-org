@@ -43,6 +43,9 @@ export default function MasafSpacesPage() {
               <p className="mt-6 text-lg leading-relaxed text-masaf-ink-muted">
                 {masafSpaces.overview.body}
               </p>
+              <p className="mt-4 text-base leading-relaxed text-masaf-ink-muted">
+                {masafSpaces.overview.extended}
+              </p>
             </div>
           </div>
         </Container>
@@ -79,28 +82,36 @@ export default function MasafSpacesPage() {
               />
             </div>
           </div>
-          <div className="max-w-2xl">
-            <Eyebrow>Why it matters</Eyebrow>
-            <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
-              {masafSpaces.whyItMatters.heading}
-            </h2>
+          <div className="grid gap-12 md:grid-cols-12 md:items-start">
+            <div className="md:col-span-5">
+              <Eyebrow>Why it matters</Eyebrow>
+              <h2 className="mt-4 text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
+                {masafSpaces.whyItMatters.heading}
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-masaf-ink-muted">
+                {masafSpaces.whyItMatters.lead}
+              </p>
+            </div>
+            <ul className="md:col-span-6 md:col-start-7 space-y-3">
+              {masafSpaces.whyItMatters.bullets.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-4 rounded-2xl bg-white px-6 py-4 text-masaf-ink border border-masaf-ink/10"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-2 inline-block h-2 w-2 rounded-full bg-masaf-tan shrink-0"
+                  />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {[
-              { label: "The problem", body: masafSpaces.whyItMatters.problem },
-              { label: "Our response", body: masafSpaces.whyItMatters.solution },
-              { label: "The impact", body: masafSpaces.whyItMatters.impact },
-            ].map((card) => (
-              <div
-                key={card.label}
-                className="rounded-2xl bg-white border border-masaf-ink/10 p-8"
-              >
-                <Eyebrow tone="tan">{card.label}</Eyebrow>
-                <p className="mt-4 text-lg leading-relaxed text-masaf-ink">
-                  {card.body}
-                </p>
-              </div>
-            ))}
+          <div className="mt-14 rounded-2xl bg-masaf-red text-masaf-cream p-8 md:p-10">
+            <Eyebrow tone="cream">The impact</Eyebrow>
+            <p className="mt-4 text-lg md:text-xl leading-relaxed">
+              {masafSpaces.whyItMatters.impact}
+            </p>
           </div>
         </Container>
       </section>
@@ -147,6 +158,23 @@ export default function MasafSpacesPage() {
               <p className="mt-4 leading-relaxed text-masaf-cream/85">
                 {masafSpaces.model.physical.description}
               </p>
+              <p className="mt-5 text-sm uppercase tracking-[0.12em] text-masaf-cream/70">
+                Physical hubs support:
+              </p>
+              <ul className="mt-3 space-y-2 text-masaf-cream/90">
+                {masafSpaces.model.physical.supports.map((s) => (
+                  <li key={s} className="flex items-start gap-3">
+                    <span
+                      aria-hidden
+                      className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-masaf-cream/70 shrink-0"
+                    />
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm leading-relaxed text-masaf-cream/75">
+                {masafSpaces.model.physical.note}
+              </p>
             </div>
             <div className="rounded-2xl border border-masaf-cream/15 p-10 relative">
               <span className="absolute top-6 right-6 text-[0.65rem] uppercase tracking-[0.18em] rounded-full bg-masaf-red px-3 py-1">
@@ -158,6 +186,23 @@ export default function MasafSpacesPage() {
               <p className="mt-4 leading-relaxed text-masaf-cream/85">
                 {masafSpaces.model.digital.description}
               </p>
+              <p className="mt-5 text-sm uppercase tracking-[0.12em] text-masaf-cream/70">
+                Digital Masaf Spaces will provide:
+              </p>
+              <ul className="mt-3 space-y-2 text-masaf-cream/90">
+                {masafSpaces.model.digital.provides.map((s) => (
+                  <li key={s} className="flex items-start gap-3">
+                    <span
+                      aria-hidden
+                      className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-masaf-cream/70 shrink-0"
+                    />
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm leading-relaxed text-masaf-cream/75">
+                {masafSpaces.model.digital.note}
+              </p>
             </div>
           </div>
         </Container>
@@ -165,24 +210,41 @@ export default function MasafSpacesPage() {
 
       <section className="py-20 md:py-28">
         <Container size="wide">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div className="grid gap-12 md:grid-cols-12 md:items-start">
+            <div className="md:col-span-5 relative aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
                 src="/images/gallery/gallery-15.jpg"
                 alt="Youth leadership in action"
                 fill
                 className="object-cover"
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 768px) 40vw, 100vw"
               />
             </div>
-            <div>
+            <div className="md:col-span-6 md:col-start-7">
               <Eyebrow>Youth Leadership</Eyebrow>
               <h3 className="mt-4 text-3xl md:text-4xl font-medium leading-[1.15] tracking-[-0.025em] text-masaf-red">
-                {masafSpaces.youthLeadership.heading}
+                {masafSpaces.peerSupport.heading}
               </h3>
               <p className="mt-5 text-lg leading-relaxed text-masaf-ink-muted">
-                {masafSpaces.youthLeadership.body}
+                {masafSpaces.peerSupport.lead}
               </p>
+              <p className="mt-5 text-base text-masaf-ink font-medium">
+                {masafSpaces.peerSupport.introLine}
+              </p>
+              <ul className="mt-4 space-y-3">
+                {masafSpaces.peerSupport.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-start gap-4 rounded-2xl bg-white px-5 py-4 text-masaf-ink border border-masaf-ink/10"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-2 inline-block h-2 w-2 rounded-full bg-masaf-tan shrink-0"
+                    />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>
@@ -198,6 +260,9 @@ export default function MasafSpacesPage() {
               </h3>
               <p className="mt-5 text-lg leading-relaxed text-masaf-ink-muted">
                 {masafSpaces.vision.body}
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-masaf-ink-muted">
+                {masafSpaces.vision.extended}
               </p>
             </div>
             <div className="md:col-span-5 md:col-start-8 relative aspect-[4/3] overflow-hidden rounded-2xl">
