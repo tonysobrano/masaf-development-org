@@ -76,6 +76,19 @@ function HeroSection() {
             </Button>
           </div>
         </div>
+
+        <dl className="mt-16 md:mt-20 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border-t border-masaf-cream/20 pt-10">
+          {home.impact.stats.map((stat) => (
+            <div key={stat.label}>
+              <dt className="text-4xl md:text-5xl font-medium tracking-[-0.03em] text-masaf-cream">
+                <AnimatedCounter target={stat.target} suffix={stat.suffix} />
+              </dt>
+              <dd className="mt-2 text-sm leading-relaxed text-masaf-cream/80">
+                {stat.label}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </Container>
     </section>
   );
