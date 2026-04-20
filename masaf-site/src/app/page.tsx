@@ -6,7 +6,14 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
 import { PartnerLogos } from "@/components/ui/PartnerLogos";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { HeroStat } from "@/components/ui/HeroStat";
+import {
+  HeroStat,
+  IconUsers,
+  IconActivity,
+  IconMapPin,
+  IconHandshake,
+  IconBuilding,
+} from "@/components/ui/HeroStat";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { home } from "@/content/site";
 
@@ -79,15 +86,25 @@ function HeroSection() {
         </div>
 
         <div className="mt-16 md:mt-20 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border-t border-masaf-cream/20 pt-10">
-          {home.impact.stats.map((stat, i) => (
-            <HeroStat
-              key={stat.label}
-              target={stat.target}
-              suffix={stat.suffix}
-              label={stat.label}
-              index={i}
-            />
-          ))}
+          {home.impact.stats.map((stat, i) => {
+            const icons = [
+              <IconUsers key="u" />,
+              <IconActivity key="a" />,
+              <IconMapPin key="m" />,
+              <IconHandshake key="h" />,
+              <IconBuilding key="b" />,
+            ];
+            return (
+              <HeroStat
+                key={stat.label}
+                target={stat.target}
+                suffix={stat.suffix}
+                label={stat.label}
+                icon={icons[i] ?? icons[0]}
+                index={i}
+              />
+            );
+          })}
         </div>
       </Container>
     </section>
