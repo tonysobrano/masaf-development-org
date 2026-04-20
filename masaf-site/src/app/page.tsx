@@ -6,6 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
 import { PartnerLogos } from "@/components/ui/PartnerLogos";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { HeroStat } from "@/components/ui/HeroStat";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { home } from "@/content/site";
 
@@ -77,18 +78,17 @@ function HeroSection() {
           </div>
         </div>
 
-        <dl className="mt-16 md:mt-20 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border-t border-masaf-cream/20 pt-10">
-          {home.impact.stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="text-4xl md:text-5xl font-medium tracking-[-0.03em] text-masaf-cream">
-                <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-              </dt>
-              <dd className="mt-2 text-sm leading-relaxed text-masaf-cream/80">
-                {stat.label}
-              </dd>
-            </div>
+        <div className="mt-16 md:mt-20 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border-t border-masaf-cream/20 pt-10">
+          {home.impact.stats.map((stat, i) => (
+            <HeroStat
+              key={stat.label}
+              target={stat.target}
+              suffix={stat.suffix}
+              label={stat.label}
+              index={i}
+            />
           ))}
-        </dl>
+        </div>
       </Container>
     </section>
   );
