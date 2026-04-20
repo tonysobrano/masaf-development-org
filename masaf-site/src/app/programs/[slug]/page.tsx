@@ -3,8 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { programs } from "@/content/site";
-
 type Params = { slug: string };
 
 const programDetails: Record<
@@ -109,10 +107,6 @@ export default async function ProgramDetailPage({
   const detail = programDetails[slug];
   if (!detail) notFound();
 
-  const thematicArea = programs.thematicAreas.items.find((a) =>
-    a.toLowerCase().includes(slug.split("-")[0]),
-  );
-
   return (
     <article className="py-20 md:py-28">
       <Container size="narrow">
@@ -124,7 +118,7 @@ export default async function ProgramDetailPage({
         </Link>
 
         <div className="mt-8">
-          {thematicArea && <Eyebrow>{thematicArea}</Eyebrow>}
+          <Eyebrow>Programs</Eyebrow>
           <h1 className="mt-4 text-4xl md:text-5xl font-medium tracking-[-0.03em] leading-[1.1] text-masaf-red">
             {detail.heading}
           </h1>

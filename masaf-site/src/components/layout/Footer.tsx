@@ -39,18 +39,22 @@ export function Footer() {
 
           <div className="md:col-span-4 text-sm">
             <p className="text-[0.7rem] uppercase tracking-[0.18em] text-masaf-cream/60">
-              Contact
+              Offices
             </p>
-            <address className="mt-4 not-italic text-masaf-cream/90 leading-relaxed">
-              <span className="font-medium">Jigjiga – MASAF Space Hub</span>
-              <br />
-              {siteSettings.contact.offices[1].street}
-              <br />
-              {siteSettings.contact.offices[1].city}, {siteSettings.contact.offices[1].region}
-              <br />
-              {siteSettings.contact.offices[1].country}
-            </address>
-            <div className="mt-4 space-y-1 text-masaf-cream/90">
+            <div className="mt-4 space-y-4 text-masaf-cream/90 leading-relaxed">
+              {siteSettings.contact.offices.map((office) => (
+                <address key={office.name} className="not-italic">
+                  <span className="font-medium">{office.name}</span>
+                  <br />
+                  {office.street}
+                  <br />
+                  {[office.city, office.region].filter(Boolean).join(", ")}
+                  <br />
+                  {office.country}
+                </address>
+              ))}
+            </div>
+            <div className="mt-6 space-y-1 text-masaf-cream/90">
               <p>
                 <a
                   className="hover:text-masaf-cream"
@@ -59,14 +63,16 @@ export function Footer() {
                   {siteSettings.contact.email}
                 </a>
               </p>
-              <p>
-                <a
-                  className="hover:text-masaf-cream"
-                  href={`tel:${siteSettings.contact.phones.ethiopia[0].replace(/\s/g, "")}`}
-                >
-                  {siteSettings.contact.phones.ethiopia[0]}
-                </a>
-              </p>
+              {siteSettings.contact.phones.ethiopia.map((phone) => (
+                <p key={phone}>
+                  <a
+                    className="hover:text-masaf-cream"
+                    href={`tel:${phone.replace(/\s/g, "")}`}
+                  >
+                    {phone}
+                  </a>
+                </p>
+              ))}
             </div>
 
             <div className="mt-6">
