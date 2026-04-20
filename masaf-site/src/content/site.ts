@@ -376,7 +376,7 @@ export const masafSpaces = {
         role: "Program Director",
         organization: "Curis Youth Development Organization",
         initials: "AB",
-        image: "/images/testimonials/IMG_9151.jpeg",
+        image: "/images/testimonials/IMG_9150.jpeg",
       },
       {
         quote:
@@ -385,7 +385,7 @@ export const masafSpaces = {
         role: "Founder",
         organization: "Mosad Med Health Initiative",
         initials: "MA",
-        image: "/images/testimonials/IMG_9150.jpeg",
+        image: "/images/testimonials/IMG_9151.jpeg",
       },
       {
         quote:
@@ -394,7 +394,7 @@ export const masafSpaces = {
         role: "Founder",
         organization: "Garaad Digital",
         initials: "AI",
-        image: "/images/testimonials/IMG_9149.jpeg",
+        image: "/images/testimonials/IMG_9152.jpeg",
       },
       {
         quote:
@@ -403,7 +403,7 @@ export const masafSpaces = {
         role: "Executive Director",
         organization: "Somali Deaf Association",
         initials: "AM",
-        image: "/images/testimonials/IMG_9152.jpeg",
+        image: "/images/testimonials/IMG_9149.jpeg",
       },
     ],
   },
