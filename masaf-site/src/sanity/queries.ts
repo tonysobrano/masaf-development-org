@@ -20,7 +20,9 @@ const aboutPageQuery = `
     objectives{ heading, items[]{ title, description } },
     values{ heading, items[]{ title, description } },
     approach{ heading, items[] },
-    team{ heading, body, members[]{ name, role, initials } }
+    governance{ heading, body },
+    executiveTeam{ heading, body, members[]{ name, role, image, bio } },
+    boardOfDirectors{ heading, body, members[]{ name, role, image, bio } }
   }
 `;
 

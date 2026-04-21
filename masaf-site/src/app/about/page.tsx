@@ -225,7 +225,6 @@ export default function AboutPage() {
 type TeamMember = {
   name: string;
   role: string;
-  initials: string;
   image?: string;
   bio?: string;
 };
@@ -246,7 +245,7 @@ function TeamSection({
   const toneClass = tone === "alt" ? "bg-masaf-tan/15" : "";
   return (
     <section className={`py-20 md:py-28 border-t border-masaf-ink/10 ${toneClass}`}>
-      <Container>
+      <Container size="wide">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>{eyebrow}</Eyebrow>
           <h2 className="mt-4 text-3xl md:text-4xl font-medium leading-[1.1] tracking-[-0.025em] text-masaf-red">
@@ -257,24 +256,36 @@ function TeamSection({
           </p>
         </div>
         {members.length > 0 ? (
-          <div className="mt-14 flex flex-wrap justify-center gap-8">
+          <ul className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {members.map((member) => (
-              <div
+              <li
                 key={member.name}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-masaf-ink/10 bg-white p-8 w-56"
+                className="flex flex-col items-center text-center"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-masaf-tan text-masaf-cream text-lg font-medium">
-                  {member.initials}
+                <div className="relative aspect-[4/5] w-full max-w-[180px] overflow-hidden rounded-2xl bg-masaf-tan/20">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="180px"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center text-masaf-ink-muted text-xs uppercase tracking-[0.12em]">
+                      Photo coming soon
+                    </div>
+                  )}
                 </div>
-                <p className="text-base font-medium text-masaf-red text-center">
+                <p className="mt-4 text-base font-medium text-masaf-red">
                   {member.name}
                 </p>
-                <p className="text-sm text-masaf-ink-muted text-center">
+                <p className="mt-1 text-sm text-masaf-ink-muted">
                   {member.role}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         ) : (
           <p className="mt-10 text-center text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
             Details coming soon
