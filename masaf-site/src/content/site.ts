@@ -279,23 +279,89 @@ export const about = {
   executiveTeam: {
     heading: "Meet Our Executive Team",
     body: "Our Executive Team leads the organization's strategy, operations, partnerships, and day-to-day implementation, ensuring effective delivery of programs and continued growth.",
-    members: [] as { name: string; role: string; initials: string; image?: string; bio?: string }[],
+    members: [
+      {
+        name: "Ahmed Taman",
+        role: "Executive Director",
+        image: "/team/ahmed-taman.jpg",
+      },
+      {
+        name: "Mohamud Abdirishid Bashir",
+        role: "Deputy Director for Operations",
+        image: "/team/mohamud-abdirishid-bashir.jpg",
+      },
+      {
+        name: "Ali Mohamed Ali",
+        role: "Program Manager",
+        image: "/team/ali-mohamed-ali.jpg",
+      },
+      {
+        name: "Mohamed Abdullahi Mohamud",
+        role: "Program Coordinator",
+        image: "/team/mohamed-abdullahi-mohamud.jpg",
+      },
+      {
+        name: "Mahamed Aabi Ahmed",
+        role: "Finance and Admin Manager",
+        image: "/team/mahamed-aabi-ahmed.jpg",
+      },
+      {
+        name: "Suhayb Mohamed Barkadle",
+        role: "Finance & Admin Team Leader",
+        image: "/team/suhayb-mohamed-barkadle.jpg",
+      },
+      {
+        name: "Suber Abdulahi Ali",
+        role: "Operations Manager",
+        image: "/team/suber-abdulahi-ali.jpg",
+      },
+      {
+        name: "Kader Shafi Ismail",
+        role: "MASAF Space – Hub Manager",
+        image: "/team/kader-shafi-ismail.jpg",
+      },
+      {
+        name: "Mohamud Sheik Mohamed",
+        role: "Communication Director",
+        image: "/team/mohamud-sheik-mohamed.jpg",
+      },
+      {
+        name: "Zakaria Muktar Abdi",
+        role: "Internal Auditor",
+        image: "/team/zakaria-muktar-abdi.jpg",
+      },
+    ] as { name: string; role: string; image?: string; bio?: string }[],
   },
   boardOfDirectors: {
     heading: "Meet Our Board of Directors",
     body: "Our Board of Directors provides strategic oversight, governance leadership, and long-term stewardship of the organization. Their guidance helps strengthen accountability, sustainability, and MASAF's mission-driven vision.",
-    members: [] as { name: string; role: string; initials: string; image?: string; bio?: string }[],
-  },
-  team: {
-    heading: "Our Team",
-    body: "MASAF is led by a diverse team of development professionals with experience in youth empowerment, skills development, entrepreneurship, digital inclusion, and community resilience.",
     members: [
       {
-        name: "Ahmed Taman Hasen",
-        role: "Founder & Executive Director",
-        initials: "AH",
+        name: "Ridwan Abdirizak Mahamud",
+        role: "Board Chairperson",
+        image: "/board/ridwan-abdirizak-mahamud.png",
       },
-    ],
+      {
+        name: "Mahamed Abdi Wali",
+        role: "Deputy Board Chairman",
+        image: "/board/mahamed-abdi-wali.png",
+      },
+      {
+        name: "Mohamed Abdirishid Ibrahim",
+        role: "Board Secretary",
+        image: "/board/mohamed-abdirishid-ibrahim.png",
+      },
+      {
+        name: "Marwo Abdiaziz Abdulahi",
+        role: "Board Member",
+        image: "/board/marwo-abdiaziz-abdulahi.png",
+      },
+      {
+        name: "Guled Hasen Egal",
+        role: "Board Member",
+        image: "/board/guled-hasen-egal.png",
+      },
+    ] as { name: string; role: string; image?: string; bio?: string }[],
   },
 };
 
