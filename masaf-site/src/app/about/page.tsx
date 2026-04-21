@@ -256,7 +256,7 @@ function TeamSection({
           </p>
         </div>
         {members.length > 0 ? (
-          <ul className="mt-14 grid justify-items-center gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <ul className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {members.map((member) => (
               <li
                 key={member.name}
