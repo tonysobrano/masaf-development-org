@@ -5,7 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
-import { news, resources } from "@/content/site";
+import { news, resources, siteSettings } from "@/content/site";
+import { FacebookPageEmbed } from "@/components/ui/FacebookPageEmbed";
 
 export const metadata: Metadata = {
   title: "News & Media",
@@ -143,6 +144,23 @@ export default function NewsPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="mt-16">
+            <Eyebrow>Live on Facebook</Eyebrow>
+            <h3 className="mt-4 text-2xl md:text-3xl font-medium tracking-[-0.025em] text-masaf-red">
+              Upcoming events &amp; latest updates
+            </h3>
+            <p className="mt-3 text-sm text-masaf-ink-muted">
+              Browse our events directly from Facebook — no need to leave this page.
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-masaf-ink/10 bg-white min-h-[520px] flex items-start justify-center">
+              <FacebookPageEmbed
+                href={siteSettings.socials.facebook}
+                tabs="events,timeline"
+                height={500}
+              />
+            </div>
           </div>
         </Container>
       </section>
