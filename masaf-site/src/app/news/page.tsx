@@ -64,6 +64,7 @@ export default function NewsPage() {
         </Container>
       </nav>
 
+      {/* 1. News & Updates */}
       <section id="news" className="py-20 md:py-24">
         <Container size="wide">
           <Eyebrow>News & Updates</Eyebrow>
@@ -97,23 +98,27 @@ export default function NewsPage() {
         </Container>
       </section>
 
-      <section id="stories" className="py-20 md:py-24 bg-masaf-tan/15">
-        <Container>
-          <Eyebrow>Success Stories</Eyebrow>
+      {/* 2. Facebook Embed */}
+      <section id="facebook" className="py-20 md:py-24 bg-masaf-tan/15">
+        <Container size="wide">
+          <Eyebrow>Live on Facebook</Eyebrow>
           <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
-            In the words of our community
+            Upcoming events &amp; latest updates
           </h2>
-          <p className="mt-6 text-lg text-masaf-ink-muted leading-relaxed">
-            We&rsquo;re gathering stories from program alumni, mentors, and
-            partners. Check back soon — or{" "}
-            <Link className="text-masaf-red hover:underline" href="/get-involved#contact-form">
-              share yours
-            </Link>
-            .
+          <p className="mt-3 text-sm text-masaf-ink-muted">
+            Browse our events directly from Facebook — no need to leave this page.
           </p>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-masaf-ink/10 bg-white min-h-[520px] flex items-start justify-center">
+            <FacebookPageEmbed
+              href={siteSettings.socials.facebook}
+              tabs="events,timeline"
+              height={500}
+            />
+          </div>
         </Container>
       </section>
 
+      {/* 3. Events */}
       <section id="events" className="py-20 md:py-24">
         <Container size="wide">
           <Eyebrow>Events</Eyebrow>
@@ -145,143 +150,11 @@ export default function NewsPage() {
               </article>
             ))}
           </div>
-
-          <div className="mt-16">
-            <Eyebrow>Live on Facebook</Eyebrow>
-            <h3 className="mt-4 text-2xl md:text-3xl font-medium tracking-[-0.025em] text-masaf-red">
-              Upcoming events &amp; latest updates
-            </h3>
-            <p className="mt-3 text-sm text-masaf-ink-muted">
-              Browse our events directly from Facebook — no need to leave this page.
-            </p>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-masaf-ink/10 bg-white min-h-[520px] flex items-start justify-center">
-              <FacebookPageEmbed
-                href={siteSettings.socials.facebook}
-                tabs="events,timeline"
-                height={500}
-              />
-            </div>
-          </div>
         </Container>
       </section>
 
-      <section id="opportunities" className="py-20 md:py-24 bg-masaf-tan/15">
-        <Container size="wide">
-          <Eyebrow>Opportunities</Eyebrow>
-          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
-            Jobs, internships, and program calls
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-masaf-ink-muted leading-relaxed">
-            Open positions, internships, youth opportunities, and calls for
-            program participants are listed here as they are published.
-          </p>
-          {news.opportunities.length > 0 ? (
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {news.opportunities.map((opp) => (
-                <article
-                  key={opp.slug}
-                  className="rounded-2xl border border-masaf-ink/10 bg-white p-8 flex flex-col"
-                >
-                  <span className="inline-flex self-start items-center rounded-full bg-masaf-red/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-masaf-red">
-                    {opp.type}
-                  </span>
-                  <h3 className="mt-3 text-xl font-medium tracking-tight text-masaf-red leading-snug">
-                    {opp.title}
-                  </h3>
-                  {opp.location && (
-                    <p className="mt-2 text-sm text-masaf-ink-muted">
-                      {opp.location}
-                    </p>
-                  )}
-                  {opp.excerpt && (
-                    <p className="mt-4 text-sm leading-relaxed text-masaf-ink-muted flex-1">
-                      {opp.excerpt}
-                    </p>
-                  )}
-                  {opp.deadline && (
-                    <p className="mt-4 text-xs uppercase tracking-[0.12em] text-masaf-ink-muted">
-                      Deadline: {formatDate(opp.deadline)}
-                    </p>
-                  )}
-                </article>
-              ))}
-            </div>
-          ) : (
-            <p className="mt-10 text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
-              No open opportunities right now. Check back soon.
-            </p>
-          )}
-        </Container>
-      </section>
-
-      <section id="blogs" className="py-20 md:py-24">
-        <Container size="wide">
-          <Eyebrow>Blogs</Eyebrow>
-          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
-            Perspectives from the MASAF team
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-masaf-ink-muted leading-relaxed">
-            Reflections, lessons learned, and analysis from our programs, field
-            teams, and partners.
-          </p>
-          {news.blogs.length > 0 ? (
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {news.blogs.map((b) => (
-                <article
-                  key={b.slug}
-                  className="rounded-2xl border border-masaf-ink/10 bg-white p-8 flex flex-col"
-                >
-                  <time className="text-xs uppercase tracking-[0.18em] text-masaf-ink-muted">
-                    {formatDate(b.publishedAt)}
-                  </time>
-                  <h3 className="mt-3 text-xl font-medium tracking-tight text-masaf-red leading-snug">
-                    {b.title}
-                  </h3>
-                  {b.author && (
-                    <p className="mt-2 text-sm text-masaf-ink-muted">
-                      By {b.author}
-                    </p>
-                  )}
-                  <p className="mt-4 text-sm leading-relaxed text-masaf-ink-muted flex-1">
-                    {b.excerpt}
-                  </p>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <p className="mt-10 text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
-              New blog posts will appear here soon.
-            </p>
-          )}
-        </Container>
-      </section>
-
-      <section id="gallery" className="py-20 md:py-24 bg-masaf-tan text-masaf-cream">
-        <Container size="wide">
-          <Eyebrow tone="cream">Media Gallery</Eyebrow>
-          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em]">
-            Moments from MASAF Spaces
-          </h2>
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {galleryImages.map((src, i) => (
-              <div
-                key={src}
-                className="relative aspect-square overflow-hidden rounded-xl"
-              >
-                <Image
-                  src={src}
-                  alt={`MASAF community image ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 25vw, 50vw"
-                />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section id="resources" className="py-20 md:py-24">
+      {/* 4. Resources */}
+      <section id="resources" className="py-20 md:py-24 bg-masaf-tan/15">
         <Container size="wide">
           <Eyebrow>Resources</Eyebrow>
           <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
@@ -345,6 +218,100 @@ export default function NewsPage() {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* 5. Opportunities */}
+      <section id="opportunities" className="py-20 md:py-24">
+        <Container size="wide">
+          <Eyebrow>Opportunities</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
+            Jobs, internships, and program calls
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-masaf-ink-muted leading-relaxed">
+            Open positions, internships, youth opportunities, and calls for
+            program participants are listed here as they are published.
+          </p>
+          {news.opportunities.length > 0 ? (
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {news.opportunities.map((opp) => (
+                <article
+                  key={opp.slug}
+                  className="rounded-2xl border border-masaf-ink/10 bg-white p-8 flex flex-col"
+                >
+                  <span className="inline-flex self-start items-center rounded-full bg-masaf-red/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-masaf-red">
+                    {opp.type}
+                  </span>
+                  <h3 className="mt-3 text-xl font-medium tracking-tight text-masaf-red leading-snug">
+                    {opp.title}
+                  </h3>
+                  {opp.location && (
+                    <p className="mt-2 text-sm text-masaf-ink-muted">
+                      {opp.location}
+                    </p>
+                  )}
+                  {opp.excerpt && (
+                    <p className="mt-4 text-sm leading-relaxed text-masaf-ink-muted flex-1">
+                      {opp.excerpt}
+                    </p>
+                  )}
+                  {opp.deadline && (
+                    <p className="mt-4 text-xs uppercase tracking-[0.12em] text-masaf-ink-muted">
+                      Deadline: {formatDate(opp.deadline)}
+                    </p>
+                  )}
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-10 text-sm uppercase tracking-[0.12em] text-masaf-ink-muted">
+              No open opportunities right now. Check back soon.
+            </p>
+          )}
+        </Container>
+      </section>
+
+      {/* 6. Media Gallery */}
+      <section id="gallery" className="py-20 md:py-24 bg-masaf-tan text-masaf-cream">
+        <Container size="wide">
+          <Eyebrow tone="cream">Media Gallery</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em]">
+            Moments from MASAF Spaces
+          </h2>
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+            {galleryImages.map((src, i) => (
+              <div
+                key={src}
+                className="relative aspect-square overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={src}
+                  alt={`MASAF community image ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                />
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 7. Success Stories */}
+      <section id="stories" className="py-20 md:py-24">
+        <Container>
+          <Eyebrow>Success Stories</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl font-medium tracking-[-0.025em] text-masaf-red">
+            In the words of our community
+          </h2>
+          <p className="mt-6 text-lg text-masaf-ink-muted leading-relaxed">
+            We&rsquo;re gathering stories from program alumni, mentors, and
+            partners. Check back soon — or{" "}
+            <Link className="text-masaf-red hover:underline" href="/get-involved#contact-form">
+              share yours
+            </Link>
+            .
+          </p>
         </Container>
       </section>
 
