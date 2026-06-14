@@ -831,6 +831,22 @@ export const resources = {
         },
       ],
     },
+    {
+      title: "Theory of Change",
+      description: "How MASAF programs translate inputs into long-term outcomes.",
+      status: "In preparation.",
+    },
+    {
+      title: "Policies & Governance",
+      description:
+        "Governance charter, safeguarding, ethics, financial management, and related policies.",
+      status: "In preparation.",
+    },
+    {
+      title: "Strategic Plan",
+      description: "Multi-year strategy for programs, partnerships, and scale.",
+      status: "In preparation.",
+    },
   ],
 };
 
