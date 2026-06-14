@@ -18,31 +18,24 @@ const COLORS = [
   "220,200,170",  // warm cream-tan
   "168,127,95",   // tan
 ];
-const HUB_COLOR = "254,230,190"; // golden warm for hub/leader nodes
 
-const LINK_DIST = 145;
+const LINK_DIST = 130;
 const LINK_DIST2 = LINK_DIST * LINK_DIST;
-const HUB_COUNT = 6;
 
 function buildParticles(w: number, h: number): Particle[] {
-  const count = Math.max(60, Math.min(95, Math.floor((w * h) / 7000)));
-  return Array.from({ length: count }, (_, i) => {
-    const isHub = i < HUB_COUNT;
-    return {
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * (isHub ? 0.10 : 0.24),
-      vy: isHub
-        ? -(Math.random() * 0.05 + 0.02)
-        : -(Math.random() * 0.14 + 0.04),
-      r: isHub ? Math.random() * 4 + 5 : Math.random() * 3 + 1.5,
-      baseAlpha: isHub ? 0.92 : Math.random() * 0.50 + 0.42,
-      phase: Math.random() * Math.PI * 2,
-      phaseSpeed: Math.random() * 0.016 + 0.004,
-      colorIndex: Math.floor(Math.random() * COLORS.length),
-      isHub,
-    };
-  });
+  const count = Math.max(22, Math.min(38, Math.floor((w * h) / 22000)));
+  return Array.from({ length: count }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.20,
+    vy: -(Math.random() * 0.10 + 0.03),
+    r: Math.random() * 1.2 + 0.8,
+    baseAlpha: Math.random() * 0.30 + 0.35,
+    phase: Math.random() * Math.PI * 2,
+    phaseSpeed: Math.random() * 0.014 + 0.004,
+    colorIndex: Math.floor(Math.random() * COLORS.length),
+    isHub: false,
+  }));
 }
 
 export function HeroBackground() {
@@ -100,21 +93,10 @@ export function HeroBackground() {
         }
       }
 
-      // Particles with two-layer glow
+      // Particles — clean dots, no glow
       for (const p of particles) {
-        const alpha = p.baseAlpha * (0.78 + 0.22 * Math.sin(p.phase));
-        const color = p.isHub ? HUB_COLOR : COLORS[p.colorIndex];
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 4.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color},${(alpha * 0.10).toFixed(3)})`;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color},${(alpha * 0.28).toFixed(3)})`;
-        ctx.fill();
-
+        const alpha = p.baseAlpha * (0.80 + 0.20 * Math.sin(p.phase));
+        const color = COLORS[p.colorIndex];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${color},${alpha.toFixed(3)})`;
