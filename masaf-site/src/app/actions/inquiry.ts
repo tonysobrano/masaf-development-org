@@ -105,34 +105,25 @@ export async function submitInquiry(
     return { ok: true, message: "Thanks — we'll be in touch." };
   }
 
+  // Best-effort Sanity write — don't block the submission on storage.
   const client = getWriteClient();
-  if (!client) {
+  if (client) {
+    try {
+      await client.create({
+        _type: "inquiry",
+        type: input.type,
+        name: input.name,
+        email: input.email,
+        organization: input.organization || undefined,
+        message: input.message,
+        source: input.source || undefined,
+        submittedAt: new Date().toISOString(),
+      });
+    } catch (err) {
+      console.error("[inquiry] Sanity write failed:", err);
+    }
+  } else {
     console.error("[inquiry] Sanity write client unavailable — check env.");
-    return {
-      ok: false,
-      message:
-        "We couldn't record your inquiry right now. Please email info@masaf.co directly.",
-    };
-  }
-
-  try {
-    await client.create({
-      _type: "inquiry",
-      type: input.type,
-      name: input.name,
-      email: input.email,
-      organization: input.organization || undefined,
-      message: input.message,
-      source: input.source || undefined,
-      submittedAt: new Date().toISOString(),
-    });
-  } catch (err) {
-    console.error("[inquiry] Sanity write failed:", err);
-    return {
-      ok: false,
-      message:
-        "We couldn't save your inquiry. Please try again or email info@masaf.co.",
-    };
   }
 
   await sendNotificationEmail(input);
