@@ -703,12 +703,12 @@ export const news = {
   },
   sections: [
     { id: "news", label: "News & Updates" },
-    { id: "stories", label: "Success Stories" },
+    { id: "facebook", label: "Facebook" },
     { id: "events", label: "Events" },
-    { id: "opportunities", label: "Opportunities" },
-    { id: "blogs", label: "Blogs" },
-    { id: "gallery", label: "Media Gallery" },
     { id: "resources", label: "Resources" },
+    { id: "opportunities", label: "Opportunities" },
+    { id: "gallery", label: "Media Gallery" },
+    { id: "stories", label: "Success Stories" },
   ],
   opportunities: [] as {
     slug: string;
