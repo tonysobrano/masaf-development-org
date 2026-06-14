@@ -302,9 +302,46 @@ export default function NewsPage() {
                 <p className="mt-3 text-sm leading-relaxed text-masaf-ink-muted">
                   {cat.description}
                 </p>
-                <p className="mt-6 inline-block self-start rounded-full bg-masaf-tan/20 px-4 py-2 text-xs uppercase tracking-[0.12em] text-masaf-ink-muted">
-                  {cat.status}
-                </p>
+                {"files" in cat && cat.files && cat.files.length > 0 ? (
+                  <ul className="mt-6 flex flex-col gap-3">
+                    {cat.files.map((file) => (
+                      <li key={file.name} className="flex flex-col gap-1.5">
+                        <span className="text-sm font-medium text-masaf-ink">
+                          {file.name}
+                        </span>
+                        <div className="flex gap-3">
+                          <a
+                            href={file.viewUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-full bg-masaf-red px-4 py-1.5 text-xs font-medium uppercase tracking-[0.1em] text-white hover:bg-masaf-red/90 transition-colors"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-3.5" aria-hidden="true">
+                              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+                              <path fillRule="evenodd" d="M1.38 8.28a.87.87 0 0 1 0-.566 7.003 7.003 0 0 1 13.238.006.87.87 0 0 1 0 .566A7.003 7.003 0 0 1 1.38 8.28ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" clipRule="evenodd" />
+                            </svg>
+                            View PDF
+                          </a>
+                          <a
+                            href={file.downloadUrl}
+                            download
+                            className="inline-flex items-center gap-1.5 rounded-full border border-masaf-ink/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.1em] text-masaf-ink hover:border-masaf-red hover:text-masaf-red transition-colors"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-3.5" aria-hidden="true">
+                              <path d="M8.75 2.75a.75.75 0 0 0-1.5 0v5.69L5.03 6.22a.75.75 0 0 0-1.06 1.06l3.5 3.5a.75.75 0 0 0 1.06 0l3.5-3.5a.75.75 0 0 0-1.06-1.06L8.75 8.44V2.75Z" />
+                              <path d="M3.5 9.75a.75.75 0 0 0-1.5 0v1.5A2.75 2.75 0 0 0 4.75 14h6.5A2.75 2.75 0 0 0 14 11.25v-1.5a.75.75 0 0 0-1.5 0v1.5c0 .69-.56 1.25-1.25 1.25h-6.5c-.69 0-1.25-.56-1.25-1.25v-1.5Z" />
+                            </svg>
+                            Download
+                          </a>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-6 inline-block self-start rounded-full bg-masaf-tan/20 px-4 py-2 text-xs uppercase tracking-[0.12em] text-masaf-ink-muted">
+                    {"status" in cat ? cat.status : "In preparation."}
+                  </p>
+                )}
               </div>
             ))}
           </div>
