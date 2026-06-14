@@ -807,12 +807,29 @@ export const resources = {
     {
       title: "Annual Reports",
       description: "Year-over-year accounts of MASAF's work, impact, and finances.",
-      status: "In preparation — first annual report coming soon.",
+      files: [
+        {
+          name: "MASAF Annual Report 2025",
+          viewUrl: "https://drive.google.com/file/d/1s5OhtypTYkJ67ITB3-x1nbqX0fpzpjM9/view",
+          downloadUrl: "https://drive.google.com/uc?export=download&id=1s5OhtypTYkJ67ITB3-x1nbqX0fpzpjM9",
+        },
+        {
+          name: "MASAF Annual Report 2024",
+          viewUrl: "https://drive.google.com/file/d/1pigd2RkDQLLHZJb1N674BObrCSpG04Lx/view",
+          downloadUrl: "https://drive.google.com/uc?export=download&id=1pigd2RkDQLLHZJb1N674BObrCSpG04Lx",
+        },
+      ],
     },
     {
       title: "Organizational Profile",
       description: "Overview of MASAF's mission, programs, and operating model.",
-      status: "In preparation.",
+      files: [
+        {
+          name: "MDO Profile",
+          viewUrl: "https://drive.google.com/file/d/1AwPh4SRVJzOGCLlwdZiSJ39JnHZMGG_O/view",
+          downloadUrl: "https://drive.google.com/uc?export=download&id=1AwPh4SRVJzOGCLlwdZiSJ39JnHZMGG_O",
+        },
+      ],
     },
     {
       title: "Theory of Change",
