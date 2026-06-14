@@ -104,57 +104,133 @@ body {
   animation: cursor-blink 1s step-end infinite;
 }
 
-/* ── Hero animated ambient orbs ─────────────────────────── */
-.hero-orb {
+/* ── Hero animated background ───────────────────────────── */
+
+/* Gradient blobs – large, low-blur, high-opacity so they're clearly visible */
+.hero-blob {
   position: absolute;
   border-radius: 50%;
-  will-change: transform;
   pointer-events: none;
+  will-change: transform;
 }
 
-.hero-orb-1 {
-  width: min(70vw, 720px);
-  height: min(70vw, 720px);
-  background: radial-gradient(circle at 40% 40%, rgba(185,60,60,0.45) 0%, transparent 65%);
-  filter: blur(90px);
-  top: -28%;
-  right: -8%;
-  animation: hero-orb-drift-1 22s ease-in-out infinite;
+/* Bright crimson highlight — creates vivid contrast against the dark base red */
+.hero-blob-1 {
+  width: min(95vw, 860px);
+  height: min(95vw, 860px);
+  background: radial-gradient(circle at center, rgba(197,48,48,0.80) 0%, transparent 65%);
+  filter: blur(48px);
+  top: -40%;
+  right: -18%;
+  animation: hero-blob-1 20s ease-in-out infinite;
 }
 
-.hero-orb-2 {
-  width: min(58vw, 640px);
-  height: min(58vw, 640px);
-  background: radial-gradient(circle at 55% 55%, rgba(168,127,95,0.28) 0%, transparent 65%);
-  filter: blur(80px);
-  bottom: -28%;
-  left: -10%;
-  animation: hero-orb-drift-2 28s ease-in-out infinite;
+/* Deep maroon shadow — carves dramatic depth in the lower-left */
+.hero-blob-2 {
+  width: min(85vw, 780px);
+  height: min(85vw, 780px);
+  background: radial-gradient(circle at center, rgba(38,6,6,0.90) 0%, transparent 65%);
+  filter: blur(52px);
+  bottom: -35%;
+  left: -18%;
+  animation: hero-blob-2 26s ease-in-out infinite;
 }
 
-.hero-orb-3 {
-  width: min(48vw, 540px);
-  height: min(48vw, 540px);
-  background: radial-gradient(circle at 50% 50%, rgba(220,155,80,0.16) 0%, transparent 65%);
-  filter: blur(70px);
-  top: 30%;
-  left: 38%;
-  animation: hero-orb-drift-3 19s ease-in-out infinite;
+/* Warm tan/amber accent — clearly contrasting hue */
+.hero-blob-3 {
+  width: min(70vw, 680px);
+  height: min(70vw, 680px);
+  background: radial-gradient(circle at center, rgba(168,127,95,0.55) 0%, transparent 65%);
+  filter: blur(44px);
+  top: 10%;
+  right: 0%;
+  animation: hero-blob-3 17s ease-in-out infinite;
 }
 
-@keyframes hero-orb-drift-1 {
+/* Orange-red warmth — sunset glow toward center */
+.hero-blob-4 {
+  width: min(60vw, 600px);
+  height: min(60vw, 600px);
+  background: radial-gradient(circle at center, rgba(180,56,20,0.60) 0%, transparent 65%);
+  filter: blur(48px);
+  bottom: 5%;
+  left: 20%;
+  animation: hero-blob-4 23s ease-in-out infinite;
+}
+
+@keyframes hero-blob-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  30%       { transform: translate(40px, 45px) scale(1.06); }
-  65%       { transform: translate(-22px, 65px) scale(0.93); }
+  25%  { transform: translate(-28px, 55px) scale(1.08); }
+  55%  { transform: translate(42px, 28px) scale(0.94); }
+  80%  { transform: translate(18px, 62px) scale(1.05); }
+}
+@keyframes hero-blob-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35%  { transform: translate(38px, -45px) scale(1.12); }
+  68%  { transform: translate(-28px, 32px) scale(0.90); }
+}
+@keyframes hero-blob-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  42%  { transform: translate(-45px, 55px) scale(1.07); }
+  72%  { transform: translate(32px, -22px) scale(0.94); }
+}
+@keyframes hero-blob-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  48%  { transform: translate(28px, -38px) scale(1.09); }
 }
 
-@keyframes hero-orb-drift-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  38%       { transform: translate(-32px, -50px) scale(1.1); }
-  72%       { transform: translate(26px, -28px) scale(0.91); }
+/* Bold diagonal shape — creates a split-level composition */
+.hero-diagonal {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 42%,
+    rgba(0,0,0,0.22) 42%
+  );
 }
 
-@keyframes hero-orb-drift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(28px, -38px) scale(1.05); }
+/* Expanding ring pulse — anchored to lower-right focal point */
+.hero-rings-origin {
+  position: absolute;
+  bottom: 18%;
+  right: 8%;
+}
+
+.hero-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(254,254,254,0.35);
+  transform: translate(-50%, -50%) scale(0);
+  animation: hero-ring-expand 4.5s cubic-bezier(0.15, 0.5, 0.5, 1) infinite;
+}
+
+.hero-ring-1 { animation-delay: 0s; }
+.hero-ring-2 { animation-delay: 1.5s; }
+.hero-ring-3 { animation-delay: 3s; }
+
+@keyframes hero-ring-expand {
+  0%   { width: 24px;  height: 24px;  opacity: 0.9; }
+  100% { width: 420px; height: 420px; opacity: 0;   }
+}
+
+/* Warm glowing focal dot — the "sunrise" origin point */
+.hero-focal-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(220,185,140,0.95) 0%, rgba(168,127,95,0.6) 50%, transparent 80%);
+  filter: blur(4px);
+  animation: hero-focal-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes hero-focal-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);   opacity: 0.85; }
+  50%       { transform: translate(-50%, -50%) scale(1.6); opacity: 1;    }
 }

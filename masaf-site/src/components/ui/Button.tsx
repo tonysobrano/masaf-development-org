@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outline-light";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outline-light" | "cream";
 type ButtonSize = "sm" | "md" | "lg";
 
 type CommonProps = {
@@ -37,6 +37,8 @@ const variants: Record<ButtonVariant, string> = {
     "bg-transparent text-masaf-ink hover:bg-masaf-ink/10 border border-masaf-ink/20",
   "outline-light":
     "bg-transparent text-masaf-cream border border-masaf-cream/40 hover:bg-masaf-cream/10",
+  cream:
+    "bg-masaf-cream text-masaf-red hover:bg-white focus-visible:outline-masaf-cream",
 };
 
 const sizes: Record<ButtonSize, string> = {

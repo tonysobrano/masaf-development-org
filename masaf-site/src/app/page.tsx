@@ -50,8 +50,8 @@ function HeroSection() {
     <section className="relative overflow-hidden bg-masaf-red text-masaf-cream">
       {/* Animated background: particle network + ambient orbs */}
       <HeroBackground />
-      {/* Content overlay – heavier on the text side, feathers out right/bottom */}
-      <div className="absolute inset-0 bg-gradient-to-br from-masaf-red/65 via-masaf-red/25 to-masaf-ink/20 pointer-events-none" />
+      {/* Subtle overlay — just enough to keep text readable without muting the blobs */}
+      <div className="absolute inset-0 bg-masaf-ink/10 pointer-events-none" />
 
       <Container size="wide" className="relative py-24 md:py-36 lg:py-44">
         <div className="max-w-4xl">
@@ -67,13 +67,15 @@ function HeroSection() {
             {home.hero.identity}
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Button href={home.hero.primaryCta.href} size="lg">
+            {/* Cream fill makes this pop against any red background */}
+            <Button href={home.hero.primaryCta.href} size="lg" variant="cream">
               {home.hero.primaryCta.label}
             </Button>
             <Button
               href={home.hero.secondaryCta.href}
               size="lg"
               variant="outline-light"
+              className="border-masaf-cream/70 hover:bg-masaf-cream/15"
             >
               {home.hero.secondaryCta.label}
             </Button>
