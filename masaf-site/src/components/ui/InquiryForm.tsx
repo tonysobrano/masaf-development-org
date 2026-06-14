@@ -2,11 +2,11 @@
 
 import { useActionState } from "react";
 import { Button } from "@/components/ui/Button";
+import { submitInquiry } from "@/app/actions/inquiry";
 import {
-  submitInquiry,
   initialInquiryState,
   type InquiryType,
-} from "@/app/actions/inquiry";
+} from "@/app/actions/inquiry-types";
 
 const typeLabels: Record<InquiryType, string> = {
   partner: "Program Partnership",
