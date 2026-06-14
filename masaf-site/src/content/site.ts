@@ -48,7 +48,7 @@ export const siteSettings = {
     ],
   },
   socials: {
-    facebook: "https://www.facebook.com/share/18YBhZ9eWx/?mibextid=wwXIfr",
+    facebook: "https://www.facebook.com/p/Masaf-Development-Org-61557377533521/",
     linkedin: "https://www.linkedin.com/company/masaf-space/",
     instagram: "https://www.instagram.com/masaf_development_org?igsh=MTFpN2F2eWU4MW9zdA==",
     twitter: "https://x.com/masafdev?s=11",
