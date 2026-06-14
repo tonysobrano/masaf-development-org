@@ -15,6 +15,7 @@ import {
   IconBuilding,
 } from "@/components/ui/HeroStat";
 import { TypewriterText } from "@/components/ui/TypewriterText";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 import { home } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -47,22 +48,16 @@ export default function HomePage() {
 function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-masaf-red text-masaf-cream">
-      <div className="absolute inset-0">
-          <Image
-            src="/images/banners/hero.svg"
-            alt="Young people gathered at a MASAF Spaces event in Jigjiga"
-          fill
-          priority
-          className="object-cover opacity-40"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-masaf-tan/60 via-masaf-tan/75 to-masaf-tan" />
-      </div>
+      {/* Animated background: particle network + ambient orbs */}
+      <HeroBackground />
+      {/* Content overlay – heavier on the text side, feathers out right/bottom */}
+      <div className="absolute inset-0 bg-gradient-to-br from-masaf-red/65 via-masaf-red/25 to-masaf-ink/20 pointer-events-none" />
 
       <Container size="wide" className="relative py-24 md:py-36 lg:py-44">
         <div className="max-w-4xl">
           <Eyebrow tone="cream">Masaf Development Organization</Eyebrow>
-          <h1 className="mt-6 font-medium leading-[1.05] tracking-[-0.03em] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          {/* text-3xl keeps each phrase on one line on phones ≥ 375 px */}
+          <h1 className="mt-6 font-medium leading-[1.05] tracking-[-0.03em] text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
             <TypewriterText text={home.hero.tagline} />
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-masaf-cream/85 leading-relaxed">
