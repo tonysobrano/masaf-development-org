@@ -8,6 +8,7 @@ type Partner = {
 };
 
 const partners: Partner[] = [
+  { name: "International Solidarity Foundation", src: "/images/partners/isf.jpg" },
   { name: "Africa Career Networks", src: "/images/partners/acn.jpg" },
   { name: "Doolo Development Society (DDS)", src: "/images/partners/dds.png" },
   { name: "Jigjiga University", src: "/images/partners/jigjiga-university.jpg" },
