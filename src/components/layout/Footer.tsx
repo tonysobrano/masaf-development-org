@@ -100,8 +100,15 @@ export function Footer() {
         <div className="mt-14 flex flex-col gap-3 border-t border-masaf-cream/15 pt-6 text-xs text-masaf-cream/60 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Masaf Development Organization. All rights reserved.</p>
           <p>
-            Headquartered in Jigjiga, Somali Region, Ethiopia · Expanding across the
-            Horn of Africa.
+            Designed & Developed by{" "}
+            <a
+              href="https://primecreative.agency"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-masaf-cream underline underline-offset-4 decoration-masaf-cream/30 hover:decoration-masaf-cream"
+            >
+              Prime Creative Agency
+            </a>
           </p>
         </div>
       </Container>
